@@ -1,0 +1,109 @@
+title: jQuery弹窗插件——jQuery-widget
+date: 2014/9/2 17:26:25
+---
+
+<link rel="stylesheet" type="text/css" href="/css/jquery-widget.css">
+<style type="text/css">
+	.btn {
+		border: none;
+		color: #fff;
+		padding: .3em 1.2em;
+		cursor: pointer;
+	}
+	.btn-open {
+		background: cornflowerblue;
+	}
+	.btn-close {
+		background-color: chocolate;
+	}
+</style>
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery-align.js"></script>
+<script type="text/javascript" src="/js/jquery-widget.js"></script>
+<div id="toc" class="toc-article">
+	<strong class="toc-title">文章目录</strong>
+	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#content"><span class="toc-number">3.1.</span> <span class="toc-text">content</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#title"><span class="toc-number">3.2.</span> <span class="toc-text">title</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#footer"><span class="toc-number">3.3.</span> <span class="toc-text">footer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#modal"><span class="toc-number">3.4.</span> <span class="toc-text">modal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dragable"><span class="toc-number">3.5.</span> <span class="toc-text">dragable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#closeable"><span class="toc-number">3.6.</span> <span class="toc-text">closeable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#closeText"><span class="toc-number">3.7.</span> <span class="toc-text">closeText</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#align"><span class="toc-number">3.8.</span> <span class="toc-text">align</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#width"><span class="toc-number">3.9.</span> <span class="toc-text">width</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#height"><span class="toc-number">3.10.</span> <span class="toc-text">height</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#open"><span class="toc-number">3.11.</span> <span class="toc-text">open</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#close"><span class="toc-number">3.12.</span> <span class="toc-text">close</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css"><span class="toc-number">3.13.</span> <span class="toc-text">css</span></a></li></ol></li></ol>
+</div>
+<h1 id="简介">简介</h1>
+<p>一个基于jQuery的弹窗插件，用于将一段内容包装成弹窗，支持模态和拖拽</p>
+<p>依赖：</p>
+<ul>
+	<li>jquery-align</li>
+</ul>
+<h1 id="使用">使用</h1>
+
+<button id="open" class="btn btn-open">打开</button>
+<button id="close" class="btn btn-close">关闭</button>
+<script type="text/javascript">
+	$(function(){
+		var widget = $.widget({
+			content: '<p>这里是内容</p><p>这里是内容</p>',
+			title: '<h2>这里是标题</h2>',
+			footer: '<strong>这里是底部</strong>',
+			modal: false,
+			dragable: true,
+			closeable: true,
+			autoOpen: false,
+			closeText: '点我关闭',
+			align: {
+				base: 'screen',
+				points: ['cc', 'cc'],
+				fixed: false,
+				offset: [0, 0]
+			},
+			width: 500,
+			height: 'auto',
+			close: function() {
+				alert('关闭弹窗');
+			},
+			open: function() {
+				alert('打开弹窗');
+			}
+		});
+		$("#open").click(function(){
+			widget.open();
+		});
+		$("#close").click(function(){
+			widget.close();
+		});
+	});
+	
+</script>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> widget = $.widget({</div><div class="line">	content: <span class="string">'&lt;p&gt;这是一段内容&lt;/p&gt;&lt;p&gt;这是一段内容&lt;/p&gt;'</span>,</div><div class="line">	title: <span class="string">'&lt;strong&gt;这里是标题&lt;/strong&gt;'</span>,</div><div class="line">	footer: <span class="string">'这里是结尾'</span>,</div><div class="line">	modal: <span class="literal">true</span>,</div><div class="line">	dragable: <span class="literal">true</span>,</div><div class="line">	closeable: <span class="literal">true</span>,</div><div class="line">	autoOpen: <span class="literal">false</span>,</div><div class="line">	closeText: <span class="string">'关闭'</span>,</div><div class="line">	align: {</div><div class="line">		fixed: <span class="literal">false</span></div><div class="line">	},</div><div class="line">	width: <span class="number">300</span>,</div><div class="line">	height: <span class="string">'auto'</span>,</div><div class="line">	close: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">		alert(<span class="string">'widget closed'</span>);</div><div class="line">	},</div><div class="line">	open: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">		alert(<span class="string">'widget opened'</span>);</div><div class="line">	}</div><div class="line">});</div></pre></td></tr></table></figure>
+<h1 id="配置">配置</h1>
+<h2 id="content">content</h2>
+<p>内容区的HTML，支持HTML Stirng、HTMLElement、jQuery对象或者false，默认为<code>&#39;&#39;</code>空字符串，为<code>false</code>将隐藏区域</p>
+<h2 id="title">title</h2>
+<p>标题栏的HTML，支持HTML Stirng、HTMLElement、jQuery对象或者false，默认为<code>&#39;&#39;</code>空字符串，为<code>false</code>将隐藏区域</p>
+<h2 id="footer">footer</h2>
+<p>底部的HTML，支持HTML Stirng、HTMLElement、jQuery对象或者false，默认为<code>&#39;&#39;</code>空字符串，为<code>false</code>将隐藏区域</p>
+<h2 id="modal">modal</h2>
+<p>是否为模态弹窗，Boolean，默认为<code>false</code></p>
+<h2 id="dragable">dragable</h2>
+<p>是否可通过点击标题栏进行拖拽，Boolean，仅在title不为false时候有效，默认为<code>true</code></p>
+<h2 id="closeable">closeable</h2>
+<p>是否在底部生成关闭按钮，Boolean，默认为<code>true</code></p>
+<h2 id="closeText">closeText</h2>
+<p>closeable为true时有效，为关闭按钮的文案</p>
+<h2 id="align">align</h2>
+<p>弹窗的位置，和jquery-align规则相同</p>
+<h2 id="width">width</h2>
+<p>弹窗的宽度，Number或<code>&#39;auto&#39;</code>，默认为<code>auto</code></p>
+<h2 id="height">height</h2>
+<p>弹窗的高度，Number或<code>&#39;auto&#39;</code>，默认为<code>auto</code></p>
+<h2 id="open">open</h2>
+<p>弹窗打开时执行，Function</p>
+<h2 id="close">close</h2>
+<p>弹窗关闭时执行，Function</p>
+<h2 id="css">css</h2>
+<p>用于自定义弹窗样式的对象，默认值如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">css: {</div><div class="line">	panel: <span class="string">'wd-ui-pn'</span>,</div><div class="line">	title: <span class="string">'wd-ui-tt'</span>,</div><div class="line">	content: <span class="string">'wd-ui-ctn'</span>,</div><div class="line">	footer: <span class="string">'wd-ui-ft'</span>,</div><div class="line">	close: <span class="string">'wd-ui-close'</span></div><div class="line">}</div></pre></td></tr></table></figure>
+<ul>
+	<li>panel: 弹窗窗体使用的样式</li>
+	<li>title: 标题栏使用的样式</li>
+	<li>content: 内容区域使用的样式</li>
+	<li>footer: 底部使用的样式</li>
+	<li>close: 关闭按钮使用的样式</li>
+</ul>
+<p>默认样式来自<code>jquery-widget.css</code></p>
+</div>
