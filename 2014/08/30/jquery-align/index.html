@@ -4,26 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>jQuery元素定位插件——jQuery-align | 天镶的jQuery插件库</title>
+    <title>jQuery元素定位插件——jQuery-align | 天镶的插件库</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="天镶">
     
-    <meta name="description" content=".demo-base {
-		margin: 1.5em auto 0;
-		width: 100px;
-		height: 100px;
-		background-color: cornflowerblue;
-	}
-	.demo-node {
-		position: absolute;
-		wid">
+    <meta name="description" content="简介
+一个使用jQuery元素定位插件，用于将元素快速进行定位，目前可以将如下内容作为基准定位：
+
+目标元素
+当前屏幕
+整个页面
+鼠标事件
+坐标
+
+依赖
+
+jQuery
+
+使用
+12345$(&quot;.someNodes&quot;).align({	base: &#39;#base&#39;,	points: [&#39;tr&#39;, &#39;t">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="lingyucoder" />
-    <meta name="twitter:title" content="jQuery元素定位插件——jQuery-align | 天镶的jQuery插件库" />
+    <meta name="twitter:title" content="jQuery元素定位插件——jQuery-align | 天镶的插件库" />
       
     
     
@@ -43,11 +49,11 @@
       <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.svg" alt="天镶的jQuery插件库" title="天镶的jQuery插件库"/></a>
+				<a href="/"><img src="/img/logo.svg" alt="天镶的插件库" title="天镶的插件库"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="天镶的jQuery插件库">天镶的jQuery插件库</a></h1>
+				<h1 class="site-name"><a href="/" title="天镶的插件库">天镶的插件库</a></h1>
 				<h2 class="blog-motto">没事敲插件</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
@@ -88,7 +94,7 @@
     </p>
   <p class="article-time">
     <time datetime="2014-08-30T09:26:25.000Z" itemprop="datePublished">8月 30 2014</time>
-    更新日期:<time datetime="2014-08-30T09:27:16.000Z" itemprop="dateModified">8月 30 2014</time>
+    更新日期:<time datetime="2014-09-07T08:51:03.000Z" itemprop="dateModified">9月 7 2014</time>
     
   </p>
 </header>
@@ -97,45 +103,14 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#base"><span class="toc-number">3.1.</span> <span class="toc-text">base</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery选择器或节点"><span class="toc-number">3.1.1.</span> <span class="toc-text">jQuery选择器或节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当前屏幕"><span class="toc-number">3.1.2.</span> <span class="toc-text">当前屏幕</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#整个页面"><span class="toc-number">3.1.3.</span> <span class="toc-text">整个页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#鼠标事件"><span class="toc-number">3.1.4.</span> <span class="toc-text">鼠标事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面相对坐标"><span class="toc-number">3.1.5.</span> <span class="toc-text">页面相对坐标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#points"><span class="toc-number">3.2.</span> <span class="toc-text">points</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#offset"><span class="toc-number">3.3.</span> <span class="toc-text">offset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fixed"><span class="toc-number">3.4.</span> <span class="toc-text">fixed</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖"><span class="toc-number">1.1.</span> <span class="toc-text">依赖</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#base"><span class="toc-number">3.1.</span> <span class="toc-text">base</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery选择器或节点"><span class="toc-number">3.1.1.</span> <span class="toc-text">jQuery选择器或节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当前屏幕"><span class="toc-number">3.1.2.</span> <span class="toc-text">当前屏幕</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#整个页面"><span class="toc-number">3.1.3.</span> <span class="toc-text">整个页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#鼠标事件"><span class="toc-number">3.1.4.</span> <span class="toc-text">鼠标事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面相对坐标"><span class="toc-number">3.1.5.</span> <span class="toc-text">页面相对坐标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基准点名称"><span class="toc-number">3.2.</span> <span class="toc-text">基准点名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#offset"><span class="toc-number">3.3.</span> <span class="toc-text">offset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fixed"><span class="toc-number">3.4.</span> <span class="toc-text">fixed</span></a></li></ol></li></ol>
 		</div>
 		
-		<style type="text/css">
-	.demo-base {
-		margin: 1.5em auto 0;
-		width: 100px;
-		height: 100px;
-		background-color: cornflowerblue;
-	}
-	.demo-node {
-		position: absolute;
-		width: 50px;
-		height: 50px;
-		background-color: chocolate;
-	}
-	.btn-show,
-	.btn-hide {
-		padding: .5em 1.5em;
-		margin: 1em 1em 0 0;
-		color: #fff;
-		border: none;
-		outline: none;
-		font-weight: bolder;
-		font-size: 110%;
-		cursor: pointer;
-	}
-	.btn-show {
-		background-color: cornflowerblue;
-	}
-	.btn-hide {
-		background-color: chocolate;
-	}
-</style>
+		<p><link rel="stylesheet" type="text/css" href="/css/align.css"></p>
 <script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery-align.js"></script>
 
 <h1 id="简介">简介</h1>
-<hr>
 <p>一个使用jQuery元素定位插件，用于将元素快速进行定位，目前可以将如下内容作为基准定位：</p>
 <ul>
 <li>目标元素</li>
@@ -144,200 +119,198 @@
 <li>鼠标事件</li>
 <li>坐标</li>
 </ul>
+<h2 id="依赖">依赖</h2>
+<ul>
+<li>jQuery</li>
+</ul>
 <h1 id="使用">使用</h1>
-<hr>
-<p><strong>在使用前必须引入jQuery</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"jquery.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"jquery-align.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">	$(<span class="string">".someNodes"</span>).align({</div><div class="line">		base: <span class="string">'#base'</span>,</div><div class="line">		points: [<span class="string">'tr'</span>, <span class="string">'tl'</span>],</div><div class="line">		offset: [<span class="number">0</span>, <span class="number">0</span>]</div><div class="line">	});</div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".someNodes"</span>).align({</div><div class="line">	base: <span class="string">'#base'</span>,</div><div class="line">	points: [<span class="string">'tr'</span>, <span class="string">'tl'</span>],</div><div class="line">	offset: [<span class="number">0</span>, <span class="number">0</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
 
 <h1 id="配置">配置</h1>
-<hr>
 <h2 id="base">base</h2>
-<p>默认为<code>screen</code></p>
+<p>元素位置的基准元素，提供如下类型，默认为<code>&#39;screen&#39;</code></p>
 <h3 id="jQuery选择器或节点">jQuery选择器或节点</h3>
-<hr>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$(</span><span class="string">'.demo-node-jq'</span>).<span class="keyword">align</span>({</div><div class="line">	base: <span class="string">'.demo-base-jq'</span>,</div><div class="line">	points: [<span class="string">'cc'</span>, <span class="string">'cc'</span>],</div><div class="line">	offset: [<span class="number">0</span>, <span class="number">0</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-jq'</span>).align({</div><div class="line">	base: <span class="string">'.demo-base-jq'</span></div><div class="line">});</div></pre></td></tr></table></figure>
 
-<div class="demo-node demo-node-jq"></div>
-<div class="demo-base demo-base-jq"></div>
-<button id="btn-show-jq" class="btn-show">显示</button>
-<button id="btn-hide-jq" class="btn-hide">隐藏</button>
+<p><div class="demo-node demo-node-jq">我会根据蓝方块来定位，我俩中心会重合</div></p>
+<p><div class="demo-base demo-base-jq"></div></p>
+<p><button id="btn-show-jq" class="btn-show">显示</button></p>
+<p><button id="btn-hide-jq" class="btn-hide">隐藏</button></p>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-jq').hide();
-		$('#btn-show-jq').click(function(){
-			node.align({
-				base: '.demo-base-jq'
-			});
-			node.show();
-		});
-		$('#btn-hide-jq').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-jq').hide();
+        $('#btn-show-jq').click(function(){
+            node.align({
+                base: '.demo-base-jq'
+            });
+            node.show();
+        });
+        $('#btn-hide-jq').click(function(){
+            node.hide();
+        });
+    })
 </script>
 
-
 <h3 id="当前屏幕">当前屏幕</h3>
-<hr>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$(</span><span class="string">'.demo-node-screen'</span>).<span class="keyword">align</span>({</div><div class="line">	base: <span class="string">'screen'</span></div><div class="line">});</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-screen'</span>).align({</div><div class="line">	base: <span class="string">'screen'</span></div><div class="line">});</div></pre></td></tr></table></figure>
 
-<div class="demo-node demo-node-screen"></div>
-<button id="btn-show-screen" class="btn-show">显示</button>
-<button id="btn-hide-screen" class="btn-hide">隐藏</button>
+<p><div class="demo-node demo-node-screen">显示在屏幕正中间，但不随着页面滚动而移动</div></p>
+<p><button id="btn-show-screen" class="btn-show">显示</button></p>
+<p><button id="btn-hide-screen" class="btn-hide">隐藏</button></p>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-screen').hide();
-		$('#btn-show-screen').click(function(){
-			node.show().align({
-				base: 'screen'
-			});
-		});
-		$('#btn-hide-screen').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-screen').hide();
+        $('#btn-show-screen').click(function(){
+            node.show().align({
+                base: 'screen'
+            });
+        });
+        $('#btn-hide-screen').click(function(){
+            node.hide();
+        });
+    })
 </script>
 
 <h3 id="整个页面">整个页面</h3>
-<hr>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$(</span><span class="string">'.demo-node-page'</span>).<span class="keyword">align</span>({</div><div class="line">	base: <span class="string">'page'</span></div><div class="line">});</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-page'</span>).align({</div><div class="line">	base: <span class="string">'page'</span>,</div><div class="line">	points: [<span class="string">'tl'</span>, <span class="string">'tl'</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
 
-<div class="demo-node demo-node-page"></div>
-<button id="btn-show-page" class="btn-show">显示</button>
-<button id="btn-hide-page" class="btn-hide">隐藏</button>
+<p><div class="demo-node demo-node-page">显示在页头右上角</div></p>
+<p><button id="btn-show-page" class="btn-show">显示</button></p>
+<p><button id="btn-hide-page" class="btn-hide">隐藏</button></p>
+<p></p><p>将显示在页面右上角</p><p></p>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-page').hide();
-		$('#btn-show-page').click(function(){
-			node.show().align({
-				base: 'page'
-			});
-		});
-		$('#btn-hide-page').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-page').hide();
+        $('#btn-show-page').click(function(){
+            node.show().align({
+                base: 'page',
+                points: ['tr', 'tr']
+            });
+            $(window).scrollTop(0);
+        });
+        $('#btn-hide-page').click(function(){
+            node.hide();
+        });
+    })
 </script>
 
 <h3 id="鼠标事件">鼠标事件</h3>
-<hr>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).click(<span class="function"><span class="keyword">function</span><span class="params">(event)</span></span>{</div><div class="line">	$(<span class="string">'.demo-node-mouse'</span>).align({</div><div class="line">		base: event</div><div class="line">	});</div><div class="line">});</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span><span class="params">(event)</span></span>{</div><div class="line">	node.align({</div><div class="line">		base: event</div><div class="line">	});</div><div class="line">};</div><div class="line">$(<span class="string">'.demo-node-mouse'</span>).click(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">	node.show();</div><div class="line">	$(<span class="built_in">document</span>).on(<span class="string">'click'</span>, fn);</div><div class="line">});</div><div class="line">$(<span class="string">'.demo-node-mouse'</span>).click(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">	node.hide();</div><div class="line">	$(<span class="built_in">document</span>).off(<span class="string">'click'</span>, fn);</div><div class="line">});</div></pre></td></tr></table></figure>
 
-<div class="demo-node demo-node-mouse"></div>
-<button id="btn-show-mouse" class="btn-show">显示</button>
-<button id="btn-hide-mouse" class="btn-hide">隐藏</button>
+<p><div class="demo-node demo-node-mouse">点击空白处，我将飞过去</div></p>
+<p><button id="btn-show-mouse" class="btn-show">显示</button></p>
+<p><button id="btn-hide-mouse" class="btn-hide">隐藏</button></p>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-mouse').hide();
-		var fn = function(event){
-			node.align({
-				base: event
-			});
-		};
-		
-		$('#btn-show-mouse').click(function(){
-			node.show();
-			$(document).on('click', fn);
-		});
-		$('#btn-hide-mouse').click(function(){
-			node.hide();
-			$(document).off('click', fn);
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-mouse').hide();
+        var fn = function(event){
+            node.align({
+                base: event
+            });
+        };
+
+        $('#btn-show-mouse').click(function(){
+            node.show();
+            $(document).on('click', fn);
+        });
+        $('#btn-hide-mouse').click(function(){
+            node.hide();
+            $(document).off('click', fn);
+        });
+    })
 </script>
 
 <h3 id="页面相对坐标">页面相对坐标</h3>
-<hr>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$(</span><span class="string">'.demo-node-point'</span>).<span class="keyword">align</span>({</div><div class="line">	base: [<span class="number">200</span>, <span class="number">2400</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-point'</span>).align({</div><div class="line">	base: [<span class="number">400</span>, <span class="number">3300</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
 
-<div class="demo-node demo-node-point"></div>
-<button id="btn-show-point" class="btn-show">显示</button>
-<button id="btn-hide-point" class="btn-hide">隐藏</button>
+<p><div class="demo-node demo-node-point">显示坐标为x:400  y:3300</div></p>
+<p><button id="btn-show-point" class="btn-show">显示</button></p>
+<p><button id="btn-hide-point" class="btn-hide">隐藏</button></p>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-point').hide();
-		$('#btn-show-point').click(function(){
-			node.show();
-			node.align({
-				base: [200, 2400]
-			});
-		});
-		$('#btn-hide-point').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-point').hide();
+        $('#btn-show-point').click(function(){
+            node.show();
+            node.align({
+                base: [400, 3300]
+            });
+        });
+        $('#btn-hide-point').click(function(){
+            node.hide();
+        });
+    })
 </script>
 
-<h2 id="points">points</h2>
-<p>含有两个字符串的数组，前者为参照元素的基准点名称，后者为被定位元素的基准点名称，这两个基准点将重合。</p>
-<p>默认为<code>[&#39;cc&#39;, &#39;cc&#39;]</code></p>
+<h2 id="基准点名称">基准点名称</h2>
+<p>含有两个字符串的数组，前者为参照元素的基准点名称，后者为被定位元素的基准点名称，这两个基准点将重合。默认为:<code>[&#39;cc&#39;, &#39;cc&#39;]</code></p>
 <p>基准点名称如下图所示：</p>
 <p><img src="http://skyinlayerblog.qiniudn.com/github%2Falign-points.png" alt="基准点名称"></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$(</span><span class="string">'.demo-node-points'</span>).<span class="keyword">align</span>({</div><div class="line">	base: <span class="string">'demo-base-points'</span>,</div><div class="line">	points: [<span class="string">'cc'</span>, <span class="string">'tl'</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-points'</span>).align({</div><div class="line">	base: <span class="string">'.demo-base-points'</span>,</div><div class="line">	points: [<span class="string">'cc'</span>, <span class="string">'tl'</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
 
-<div class="demo-node demo-node-points"></div>
-<div class="demo-base demo-base-points"></div>
-<button id="btn-show-points" class="btn-show">显示</button>
-<button id="btn-hide-points" class="btn-hide">隐藏</button>
+<p><div class="demo-node demo-node-points">我的左上角将和蓝方块的中心重合</div></p>
+<p><div class="demo-base demo-base-points"></div></p>
+<p><button id="btn-show-points" class="btn-show">显示</button></p>
+<p><button id="btn-hide-points" class="btn-hide">隐藏</button></p>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-points').hide();
-		$('#btn-show-points').click(function(){
-			node.show().align({
-				base: '.demo-base-points',
-				points: ['cc', 'tl']
-			});
-		});
-		$('#btn-hide-points').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-points').hide();
+        $('#btn-show-points').click(function(){
+            node.show().align({
+                base: '.demo-base-points',
+                points: ['cc', 'tl']
+            });
+        });
+        $('#btn-hide-points').click(function(){
+            node.hide();
+        });
+    })
 </script>
 
 
 <h2 id="offset">offset</h2>
-<p>含有两个数字的数组，前者为x轴偏移，后者为y轴偏移，默认为<code>[0, 0]</code></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$(</span><span class="string">'.demo-node-offset'</span>).<span class="keyword">align</span>({</div><div class="line">	base: <span class="string">'demo-base-offset'</span>,</div><div class="line">	offset: [<span class="number">20</span>, <span class="number">20</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
+<p>含有两个数字的数组，前者为x轴偏移，后者为y轴偏移，默认为: <code>[0, 0]</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-offset'</span>).align({</div><div class="line">	base: <span class="string">'.demo-base-offset'</span>,</div><div class="line">	points: [<span class="string">'tl'</span>, <span class="string">'tl'</span>]</div><div class="line">	offset: [<span class="number">10</span>, <span class="number">10</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
 
-<div class="demo-node demo-node-offset"></div>
-<div class="demo-base demo-base-offset"></div>
-<button id="btn-show-offset" class="btn-show">显示</button>
-<button id="btn-hide-offset" class="btn-hide">隐藏</button>
+<p><div class="demo-node demo-node-offset">我的左上角，将在蓝方块的左上角右下10px的位置</div></p>
+<p><div class="demo-base demo-base-offset"></div></p>
+<p><button id="btn-show-offset" class="btn-show">显示</button></p>
+<p><button id="btn-hide-offset" class="btn-hide">隐藏</button></p>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-offset').hide();
-		$('#btn-show-offset').click(function(){
-			node.show().align({
-				base: '.demo-base-offset',
-				offset: [20, 20]
-			});
-		});
-		$('#btn-hide-offset').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-offset').hide();
+        $('#btn-show-offset').click(function(){
+            node.show().align({
+                base: '.demo-base-offset',
+                points: ['tl', 'tl'],
+                offset: [10, 10]
+            });
+        });
+        $('#btn-hide-offset').click(function(){
+            node.hide();
+        });
+    })
 </script>
 
 <h2 id="fixed">fixed</h2>
-<p>仅当base为<code>screen</code>时启用，表示是否固定与屏幕，默认为<code>false</code></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-fixed'</span>).align({</div><div class="line">	<span class="keyword">base</span>: screen,</div><div class="line">	<span class="keyword">fixed</span>: <span class="keyword">true</span></div><div class="line">});</div></pre></td></tr></table></figure>
+<p>仅当base为<code>screen</code>时有效，表示是否固定与屏幕，默认为<code>false</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-fixed'</span>).align({</div><div class="line">	base: <span class="string">'screen'</span>,</div><div class="line">	fixed: <span class="literal">true</span></div><div class="line">});</div></pre></td></tr></table></figure>
 
-<div class="demo-node demo-node-fixed"></div>
-<button id="btn-show-fixed" class="btn-show">显示</button>
-<button id="btn-hide-fixed" class="btn-hide">隐藏</button>
+<p><div class="demo-node demo-node-fixed">我会一直显示在屏幕中间，记得点关闭</div></p>
+<p><button id="btn-show-fixed" class="btn-show">显示</button></p>
+<p><button id="btn-hide-fixed" class="btn-hide">隐藏</button></p>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-fixed').hide();
-		$('#btn-show-fixed').click(function(){
-			node.show().align({
-				base: 'screen',
-				fixed: true
-			});
-		});
-		$('#btn-hide-fixed').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-fixed').hide();
+        $('#btn-show-fixed').click(function(){
+            node.show().align({
+                base: 'screen',
+                fixed: true
+            });
+        });
+        $('#btn-hide-fixed').click(function(){
+            node.hide();
+        });
+    })
 </script>
   
 	</div>
@@ -348,7 +321,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2014/08/30/jquery-align/" data-title="jQuery元素定位插件——jQuery-align | 天镶的jQuery插件库" data-tsina="lingyucoder" class="share clearfix">
+  <div data-url="http://yoursite.com/2014/08/30/jquery-align/" data-title="jQuery元素定位插件——jQuery-align | 天镶的插件库" data-tsina="lingyucoder" class="share clearfix">
   </div>
 
 </div>
@@ -358,7 +331,7 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2014/09/02/jquery-widget/" title="jQuery弹窗插件——jQuery-widget">
+ <a href="/2014/09/07/jquery-widget/" title="jQuery弹窗插件——jQuery-widget">
   <strong>PREVIOUS:</strong><br/>
   <span>
   jQuery弹窗插件——jQuery-widget</span>
@@ -378,7 +351,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#base"><span class="toc-number">3.1.</span> <span class="toc-text">base</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery选择器或节点"><span class="toc-number">3.1.1.</span> <span class="toc-text">jQuery选择器或节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当前屏幕"><span class="toc-number">3.1.2.</span> <span class="toc-text">当前屏幕</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#整个页面"><span class="toc-number">3.1.3.</span> <span class="toc-text">整个页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#鼠标事件"><span class="toc-number">3.1.4.</span> <span class="toc-text">鼠标事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面相对坐标"><span class="toc-number">3.1.5.</span> <span class="toc-text">页面相对坐标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#points"><span class="toc-number">3.2.</span> <span class="toc-text">points</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#offset"><span class="toc-number">3.3.</span> <span class="toc-text">offset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fixed"><span class="toc-number">3.4.</span> <span class="toc-text">fixed</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖"><span class="toc-number">1.1.</span> <span class="toc-text">依赖</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#base"><span class="toc-number">3.1.</span> <span class="toc-text">base</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery选择器或节点"><span class="toc-number">3.1.1.</span> <span class="toc-text">jQuery选择器或节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当前屏幕"><span class="toc-number">3.1.2.</span> <span class="toc-text">当前屏幕</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#整个页面"><span class="toc-number">3.1.3.</span> <span class="toc-text">整个页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#鼠标事件"><span class="toc-number">3.1.4.</span> <span class="toc-text">鼠标事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面相对坐标"><span class="toc-number">3.1.5.</span> <span class="toc-text">页面相对坐标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基准点名称"><span class="toc-number">3.2.</span> <span class="toc-text">基准点名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#offset"><span class="toc-number">3.3.</span> <span class="toc-text">offset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fixed"><span class="toc-number">3.4.</span> <span class="toc-text">fixed</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">

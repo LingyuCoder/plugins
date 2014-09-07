@@ -1,4 +1,5 @@
 jQuery(function() {
+	'use strict';
 	var defaultConfig = {
 		base: 'screen',
 		points: ['cc', 'cc'],
@@ -19,8 +20,8 @@ jQuery(function() {
 		var width;
 		var height = 0;
 		var node;
-		if($.isFunction(base.preventDefault)){
-			if(!base.pageX){
+		if ($.isFunction(base.preventDefault)) {
+			if (!base.pageX) {
 				base = new $.Event(base);
 			}
 			pos.x = base.pageX;
@@ -40,11 +41,6 @@ jQuery(function() {
 				height = $doc.height();
 			} else {
 				node = $(base);
-				offset = node.offset();
-				pos.x = offset.left;
-				pos.y = offset.top;
-				width = node.width();
-				height = node.height();
 			}
 		} else if ($.isArray(base)) {
 			pos.x = base[0];
@@ -52,11 +48,15 @@ jQuery(function() {
 			width = 0;
 			height = 0;
 		} else if (base instanceof $) {
-			offset = base.offset();
+			node = base;
+		}
+
+		if (node) {
+			offset = node.offset();
 			pos.x = offset.left;
 			pos.y = offset.top;
-			width = base.width();
-			height = base.height();
+			width = node.outerWidth();
+			height = node.outerHeight();
 		}
 
 		switch (basePoint.charAt(0)) {
@@ -80,6 +80,7 @@ jQuery(function() {
 			default:
 				break;
 		}
+
 		return pos;
 	}
 
@@ -88,8 +89,8 @@ jQuery(function() {
 			x: offset[0],
 			y: offset[1]
 		};
-		var width = $ele.width();
-		var height = $ele.height();
+		var width = $ele.outerWidth(true);
+		var height = $ele.outerHeight(true);
 		var basePoint = points[1];
 		switch (basePoint.charAt(0)) {
 			case 'c':
@@ -115,20 +116,35 @@ jQuery(function() {
 		return pos;
 	}
 
+	function calParentPos(ele) {
+		var cur = ele.parent();
+		var offset;
+		var position;
+		position = cur.css('position');
+		while (!cur.is('html') && position !== 'absolute' && position !== 'fixed') {
+			cur = cur.parent();
+			position = cur.css('position');
+		}
+		offset = cur.offset();
+		return {
+			x: offset.left,
+			y: offset.top
+		};
+	}
+
 	$.fn.align = function(config) {
 		config = $.extend({}, defaultConfig, config);
 		config.fixed = config.base === 'screen' && config.fixed;
-
 		var self = this;
 		var base = calBase(config.base, config.points, config.fixed);
-
 		$.each(self, function(index, ele) {
 			ele = $(ele);
 			var offset = calOffset(ele, config.offset, config.points);
+			var parent = calParentPos(ele);
 			ele.css({
 				position: config.fixed ? 'fixed' : 'absolute',
-				left: base.x + offset.x,
-				top: base.y + offset.y
+				left: base.x + offset.x - parent.x,
+				top: base.y + offset.y - parent.y
 			});
 		});
 	};
