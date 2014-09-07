@@ -1,0 +1,379 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>jQuery消息提示插件——jQuery-message | 天镶的插件库</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="天镶">
+    
+    <meta name="description" content="简介
+一个基于jQuery的消息提示插件，提示出现在右下角
+依赖
+
+jquery-align
+
+实例
+123456789101112131415161718192021222324252627//普通消息$.msg.log({    content: &#39;你的狗出去玩了&#39;,    duration: ">
+    
+    
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="lingyucoder" />
+    <meta name="twitter:title" content="jQuery消息提示插件——jQuery-message | 天镶的插件库" />
+      
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="天镶的插件库" title="天镶的插件库"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="天镶的插件库">天镶的插件库</a></h1>
+				<h2 class="blog-motto">没事敲插件</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/09/07/jquery-message/" title="jQuery消息提示插件——jQuery-message" itemprop="url">jQuery消息提示插件——jQuery-message</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="https://plus.google.com/lingyucoder?rel=author" title="天镶" target="_blank" itemprop="author">天镶</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-09-07T09:20:38.000Z" itemprop="datePublished">9月 7 2014</time>
+    更新日期:<time datetime="2014-09-07T09:20:38.000Z" itemprop="dateModified">9月 7 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖"><span class="toc-number">1.1.</span> <span class="toc-text">依赖</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实例"><span class="toc-number">2.</span> <span class="toc-text">实例</span></a></li></ol>
+		</div>
+		
+		<p><link rel="stylesheet" type="text/css" href="/css/jquery-widget.css"></p>
+<p><link rel="stylesheet" type="text/css" href="/css/jquery-message.css"></p>
+<link rel="stylesheet" type="text/css" href="/css/message.css">
+
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery-align.js"></script>
+<script type="text/javascript" src="/js/jquery-message.js"></script>
+
+<h1 id="简介">简介</h1>
+<p>一个基于jQuery的消息提示插件，提示出现在右下角</p>
+<h2 id="依赖">依赖</h2>
+<ul>
+<li>jquery-align</li>
+</ul>
+<h1 id="实例">实例</h1>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//普通消息</span></div><div class="line">$.msg.log({</div><div class="line">    content: <span class="string">'你的狗出去玩了'</span>,</div><div class="line">    duration: <span class="number">2000</span>,</div><div class="line">    closeWhenClick: <span class="literal">true</span></div><div class="line">});</div><div class="line"></div><div class="line"><span class="comment">//警告消息</span></div><div class="line">$.msg.warn({</div><div class="line">    content: <span class="string">'警告：你的狗和邻居的狗正在对视'</span>,</div><div class="line">    duration: <span class="number">2000</span>,</div><div class="line">    closeWhenClick: <span class="literal">true</span></div><div class="line">});</div><div class="line"></div><div class="line"><span class="comment">//错误消息</span></div><div class="line">$.msg.error({</div><div class="line">    content: <span class="string">'你的狗和邻居的狗打起来了！'</span>,</div><div class="line">    duration: <span class="number">2000</span>,</div><div class="line">    closeWhenClick: <span class="literal">true</span></div><div class="line">});</div><div class="line"></div><div class="line"><span class="comment">//成功消息</span></div><div class="line">$.msg.success({</div><div class="line">    content: <span class="string">'你的狗打赢了，凯旋而归！'</span>,</div><div class="line">    duration: <span class="number">2000</span>,</div><div class="line">    closeWhenClick: <span class="literal">true</span></div><div class="line">});</div></pre></td></tr></table></figure>
+
+<p><button id="log btn btn-open">提示</button></p>
+<p><button id="warn btn btn-open">警告</button></p>
+<p><button id="error btn btn-open">错误</button></p>
+<p><button id="success btn btn-open">成功</button></p>
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+<script type="text/javascript" src="../align/jquery-align.js"></script>
+<script type="text/javascript" src="../message/jquery-message.js"></script>
+<script type="text/javascript">
+    $('#success').click(function(){
+        $.msg.success({
+            content: '你的狗打赢了，凯旋而归！',
+            duration: 2000,
+            closeWhenClick: true
+        });
+    });
+    $('#error').click(function(){
+        $.msg.error({
+            content: '你的狗和邻居的狗打起来了！',
+            duration: 2000,
+            closeWhenClick: true
+        });
+    });
+    $('#warn').click(function(){
+        $.msg.warn({
+            content: '警告：你的狗和邻居的狗正在对视',
+            duration: 2000,
+            closeWhenClick: true
+        });
+    });
+    $('#log').click(function(){
+        $.msg.log({
+            content: '你的狗出去玩了',
+            duration: 2000,
+            closeWhenClick: true
+        });
+    });
+
+</script>  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2014/09/07/jquery-message/" data-title="jQuery消息提示插件——jQuery-message | 天镶的插件库" data-tsina="lingyucoder" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/09/07/jquery-widget/"  title="jQuery弹窗插件——jQuery-widget">
+ <strong>NEXT:</strong><br/> 
+ <span>jQuery弹窗插件——jQuery-widget
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖"><span class="toc-number">1.1.</span> <span class="toc-text">依赖</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实例"><span class="toc-number">2.</span> <span class="toc-text">实例</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="http://lingyu.wang" target="_blank" title="天镶的博客">天镶的博客</a></li>
+    </ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">1</span></li></ul>
+  </div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Offer快到碗里来 <br/>
+			天镶</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/lingyucoder" target="_blank" title="weibo"></a>
+		
+		
+		<a href="https://twitter.com/lingyucoder" target="_blank" title="twitter"></a>
+		
+		
+		<a href="https://github.com/lingyucoder" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014 
+		
+		<a href="http://yoursite.com" target="_blank" title="天镶">天镶</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"skyinlayer"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  </body>
+</html>
