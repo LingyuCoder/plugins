@@ -1,4 +1,5 @@
 jQuery(function() {
+	'use strict';
 	var zIndex = 1000000;
 	var defaultConfig = {
 		content: '',
@@ -179,8 +180,7 @@ jQuery(function() {
 		}
 
 		function mousedown(event) {
-			var self = $(this);
-			var offset = self.offset();
+			var offset = $(event.target).offset();
 			originMouse.x = event.pageX;
 			originMouse.y = event.pageY;
 			originPos.x = offset.left;
