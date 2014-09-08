@@ -18,7 +18,7 @@ jquery-align
 下载
 Github地址
 实例
-12345678$(&#39;#clicktip&#39;).tip({    content: &#39;这是一条点击提示&#39;,    trigger: &#39;click&#39;});$(&#39;#hovertip&#39;).tip({ ">
+123456789101112$(&#39;#clicktip&#39;).tip({    content: &#39;这是一条点击提示&#39;,    trigger: &#39;click&#39;});$(&#39;#hovertip&#39;)">
     
     
     
@@ -90,7 +90,7 @@ Github地址
     </p>
   <p class="article-time">
     <time datetime="2014-09-07T09:26:25.000Z" itemprop="datePublished">9月 7 2014</time>
-    更新日期:<time datetime="2014-09-08T10:59:50.000Z" itemprop="dateModified">9月 8 2014</time>
+    更新日期:<time datetime="2014-09-08T11:01:47.000Z" itemprop="dateModified">9月 8 2014</time>
     
   </p>
 </header>
@@ -120,7 +120,7 @@ Github地址
 <h1 id="下载">下载</h1>
 <p><a href="https://github.com/LingyuCoder/jquery-tip" target="_blank" rel="external">Github地址</a></p>
 <h1 id="实例">实例</h1>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#clicktip'</span>).tip({</div><div class="line">    content: <span class="string">'这是一条点击提示'</span>,</div><div class="line">    trigger: <span class="string">'click'</span></div><div class="line">});</div><div class="line">$(<span class="string">'#hovertip'</span>).tip({</div><div class="line">    content: <span class="string">'这是一条悬停提示'</span>,</div><div class="line">    trigger: <span class="string">'hover'</span></div><div class="line">});</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#clicktip'</span>).tip({</div><div class="line">    content: <span class="string">'这是一条点击提示'</span>,</div><div class="line">    trigger: <span class="string">'click'</span></div><div class="line">});</div><div class="line">$(<span class="string">'#hovertip'</span>).tip({</div><div class="line">    content: <span class="string">'这是一条悬停提示'</span>,</div><div class="line">    trigger: <span class="string">'hover'</span></div><div class="line">});</div><div class="line">$(<span class="string">'#alwaystip'</span>).tip({</div><div class="line">    content: <span class="string">'这是一条悬停提示'</span>,</div><div class="line">    trigger: <span class="string">'always'</span></div><div class="line">});</div></pre></td></tr></table></figure>
 
 
 <button id="clicktip" class="btn btn-open">点击显示</button>
@@ -135,7 +135,7 @@ $('#hovertip').tip({
     content: '这是一条悬停提示',
     trigger: 'hover'
 });
-$('#hovertip').tip({
+$('#alwaystip').tip({
     content: '这是一条悬停提示',
     trigger: 'always'
 });
