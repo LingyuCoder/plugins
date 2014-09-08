@@ -90,7 +90,7 @@ Github地址
     </p>
   <p class="article-time">
     <time datetime="2014-09-07T09:26:25.000Z" itemprop="datePublished">9月 7 2014</time>
-    更新日期:<time datetime="2014-09-08T10:51:34.000Z" itemprop="dateModified">9月 8 2014</time>
+    更新日期:<time datetime="2014-09-08T10:59:50.000Z" itemprop="dateModified">9月 8 2014</time>
     
   </p>
 </header>
@@ -123,8 +123,9 @@ Github地址
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#clicktip'</span>).tip({</div><div class="line">    content: <span class="string">'这是一条点击提示'</span>,</div><div class="line">    trigger: <span class="string">'click'</span></div><div class="line">});</div><div class="line">$(<span class="string">'#hovertip'</span>).tip({</div><div class="line">    content: <span class="string">'这是一条悬停提示'</span>,</div><div class="line">    trigger: <span class="string">'hover'</span></div><div class="line">});</div></pre></td></tr></table></figure>
 
 
-<button id="clicktip" class="btn btn-open">点击提示</button>
-<button id="hovertip" class="btn btn-open">悬停提示</button>
+<button id="clicktip" class="btn btn-open">点击显示</button>
+<button id="hovertip" class="btn btn-open" style="margin-left: 100px">悬停显示</button>
+<button id="alwaystip" class="btn btn-open" style="margin-left: 100px">一直显示</button>
 <script type="text/javascript">
 $('#clicktip').tip({
     content: '这是一条点击提示',
@@ -133,6 +134,10 @@ $('#clicktip').tip({
 $('#hovertip').tip({
     content: '这是一条悬停提示',
     trigger: 'hover'
+});
+$('#hovertip').tip({
+    content: '这是一条悬停提示',
+    trigger: 'always'
 });
 </script>
 
