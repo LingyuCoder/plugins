@@ -1,4 +1,4 @@
-jQuery(function() {
+(function($) {
 	'use strict';
 	var zIndex = 1000000;
 	var defaultConfig = {
@@ -29,7 +29,6 @@ jQuery(function() {
 		open: function() {},
 	};
 
-	var $ = jQuery;
 	var $body = $('body');
 	var $win = $(window);
 	var $doc = $(document);
@@ -226,4 +225,4 @@ jQuery(function() {
 		initWidget($widget, config);
 		return $widget;
 	};
-});
+})(jQuery);

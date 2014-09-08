@@ -1,4 +1,4 @@
-jQuery(function() {
+(function($) {
 	'use strict';
 	var defaultConfig = {
 		base: 'screen',
@@ -6,7 +6,6 @@ jQuery(function() {
 		fixed: false,
 		offset: [0, 0]
 	};
-	var $ = jQuery;
 	var $doc = $(document);
 	var $win = $(window);
 
@@ -148,4 +147,4 @@ jQuery(function() {
 			});
 		});
 	};
-});
+})(jQuery);

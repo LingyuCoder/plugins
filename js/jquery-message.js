@@ -1,4 +1,4 @@
-jQuery(function() {
+(function($) {
 	'use strict';
 	var defaultConfig = {
 		content: '',
@@ -6,7 +6,6 @@ jQuery(function() {
 		css: 'wd-ui-msg wd-ui-log',
 		closeWhenClick: true
 	};
-	var $ = jQuery;
 	var $body = $('body');
 
 	var $msgTpl = $('<div class="wd-msg"></div>');
@@ -83,4 +82,4 @@ jQuery(function() {
 			css: 'wd-ui-msg wd-ui-err'
 		},config));
 	};
-});
+})(jQuery);
