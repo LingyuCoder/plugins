@@ -90,7 +90,7 @@ Github地址
     </p>
   <p class="article-time">
     <time datetime="2014-09-07T09:26:25.000Z" itemprop="datePublished">9月 7 2014</time>
-    更新日期:<time datetime="2014-09-08T11:02:55.000Z" itemprop="dateModified">9月 8 2014</time>
+    更新日期:<time datetime="2014-09-13T06:08:05.000Z" itemprop="dateModified">9月 13 2014</time>
     
   </p>
 </header>
@@ -99,16 +99,16 @@ Github地址
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖"><span class="toc-number">1.1.</span> <span class="toc-text">依赖</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下载"><span class="toc-number">2.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实例"><span class="toc-number">3.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">4.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#content"><span class="toc-number">4.1.</span> <span class="toc-text">content</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#trigger"><span class="toc-number">4.2.</span> <span class="toc-text">trigger</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#align"><span class="toc-number">4.3.</span> <span class="toc-text">align</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arrow"><span class="toc-number">4.4.</span> <span class="toc-text">arrow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#duration"><span class="toc-number">4.5.</span> <span class="toc-text">duration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css"><span class="toc-number">4.6.</span> <span class="toc-text">css</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖"><span class="toc-number">1.1.</span> <span class="toc-text">依赖</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下载"><span class="toc-number">2.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实例"><span class="toc-number">3.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">4.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#content"><span class="toc-number">4.1.</span> <span class="toc-text">content</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#trigger"><span class="toc-number">4.2.</span> <span class="toc-text">trigger</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#align"><span class="toc-number">4.3.</span> <span class="toc-text">align</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arrow"><span class="toc-number">4.4.</span> <span class="toc-text">arrow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#duration"><span class="toc-number">4.5.</span> <span class="toc-text">duration</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#公用tip"><span class="toc-number">5.</span> <span class="toc-text">公用tip</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#css"><span class="toc-number">5.1.</span> <span class="toc-text">css</span></a></li></ol></li></ol>
 		</div>
 		
 		
-<link rel="stylesheet" type="text/css" href="/css/jquery-widget.css">
-<link rel="stylesheet" type="text/css" href="/css/jquery-tip.css">
+<link rel="stylesheet" type="text/css" href="/css/widget/jquery-widget-min.css">
+<link rel="stylesheet" type="text/css" href="/css/tip/jquery-tip-min.css">
 <link rel="stylesheet" type="text/css" href="/css/tip.css">
 
-<script type="text/javascript" src="/js/jquery-align.js"></script>
-<script type="text/javascript" src="/js/jquery-tip.js"></script>
+<script type="text/javascript" src="/js/align/jquery-align-min.js"></script>
+<script type="text/javascript" src="/js/tip/jquery-tip-min.js"></script>
 
 
 <h1 id="简介">简介</h1>
@@ -316,9 +316,38 @@ $('#alwaystip').tip({
 </script>
 
 
+<h1 id="公用tip">公用tip</h1>
+<p>可以通过jQuery选择器选择多个对象，他们将公用一个tip</p>
+
+<button class="btn btn-open btn-common-click btn-1">点击公用tip</button>
+<button class="btn btn-open btn-common-click btn-2">点击公用tip</button>
+<button class="btn btn-open btn-common-click btn-3">点击公用tip</button>
+<script type="text/javascript">
+    $('.btn-common-click').tip({
+        content: '我在右边',
+        align: {
+            base: 'self',
+            points: ['cr', 'cl'],
+            offset: [10, 0]
+        },
+        trigger: 'click',
+        arrow: {
+            type: 'left',
+            size: 10,
+            color: 'chocolate',
+            offset: 0
+        },
+        css: {
+            tip: 'sample-ui-tip',
+            arrow: 'sample-ui-tip-arrow'
+        }
+    });
+</script>
+
+
 <h2 id="css">css</h2>
 <p>一个对象，用于提供自定义的css，默认为：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">css: {</div><div class="line">    tip: <span class="string">'sample-ui-tip'</span>,</div><div class="line">    arrow: <span class="string">'sample-ui-tip-arrow'</span></div><div class="line">}</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">css: {</div><div class="line">    tip: <span class="string">'wd-ui-tip'</span>,</div><div class="line">    arrow: <span class="string">'wd-ui-tip-arrow'</span></div><div class="line">}</div></pre></td></tr></table></figure>
 
   
 	</div>
@@ -338,6 +367,14 @@ $('#alwaystip').tip({
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2014/09/12/jquery-alert/" title="jQuery提示框插件——jQuery-alert">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  jQuery提示框插件——jQuery-alert</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2014/09/07/jquery-message/"  title="jQuery消息提示插件——jQuery-message">
@@ -359,7 +396,7 @@ $('#alwaystip').tip({
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖"><span class="toc-number">1.1.</span> <span class="toc-text">依赖</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下载"><span class="toc-number">2.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实例"><span class="toc-number">3.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">4.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#content"><span class="toc-number">4.1.</span> <span class="toc-text">content</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#trigger"><span class="toc-number">4.2.</span> <span class="toc-text">trigger</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#align"><span class="toc-number">4.3.</span> <span class="toc-text">align</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arrow"><span class="toc-number">4.4.</span> <span class="toc-text">arrow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#duration"><span class="toc-number">4.5.</span> <span class="toc-text">duration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css"><span class="toc-number">4.6.</span> <span class="toc-text">css</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖"><span class="toc-number">1.1.</span> <span class="toc-text">依赖</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下载"><span class="toc-number">2.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实例"><span class="toc-number">3.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">4.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#content"><span class="toc-number">4.1.</span> <span class="toc-text">content</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#trigger"><span class="toc-number">4.2.</span> <span class="toc-text">trigger</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#align"><span class="toc-number">4.3.</span> <span class="toc-text">align</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arrow"><span class="toc-number">4.4.</span> <span class="toc-text">arrow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#duration"><span class="toc-number">4.5.</span> <span class="toc-text">duration</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#公用tip"><span class="toc-number">5.</span> <span class="toc-text">公用tip</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#css"><span class="toc-number">5.1.</span> <span class="toc-text">css</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
@@ -377,7 +414,7 @@ $('#alwaystip').tip({
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09">September 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09">September 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">1</span></li></ul>
   </div>
 
 
