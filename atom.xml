@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[天镶的插件库]]></title>
+  <subtitle><![CDATA[没事敲插件]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2014-09-14T12:07:22.053Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name><![CDATA[天镶]]></name>
+    <email><![CDATA[lingyucoder@gmail.com]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[jQuery提示框插件——jQuery-alert]]></title>
+    <link href="http://yoursite.com/2014/09/12/jquery-alert/"/>
+    <id>http://yoursite.com/2014/09/12/jquery-alert/</id>
+    <published>2014-09-12T09:26:25.000Z</published>
+    <updated>2014-09-14T12:00:39.000Z</updated>
+    <content type="html"><![CDATA[
+<link rel="stylesheet" type="text/css" href="/css/widget/jquery-widget-min.css">
+<link rel="stylesheet" type="text/css" href="/css/alert/jquery-alert-min.css">
+<link rel="stylesheet" type="text/css" href="/css/message/jquery-message-min.css">
+<link rel="stylesheet" type="text/css" href="/css/alert.css">
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.js"></script>
+<script type="text/javascript" src="/js/align/jquery-align-min.js"></script>
+<script type="text/javascript" src="/js/widget/jquery-widget-min.js"></script>
+<script type="text/javascript" src="/js/message/jquery-message-min.js"></script>
+<script type="text/javascript" src="/js/alert/jquery-alert-min.js"></script>
+
+
+<h1 id="简介">简介</h1>
+<p>基于jQuery的提示框插件，提供常用的三种提示框：</p>
+<ul>
+<li>alert</li>
+<li>confirm</li>
+<li>prompt</li>
+</ul>
+<h1 id="依赖">依赖</h1>
+<ul>
+<li>jquery-widget</li>
+</ul>
+<h1 id="实例">实例</h1>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#alert"</span>).click(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">    $.alert({</div><div class="line">        content: <span class="string">'发生错误了～'</span>,</div><div class="line">        modal: <span class="literal">true</span>,</div><div class="line">        closeText: <span class="string">'关闭'</span>,</div><div class="line">        fixed: <span class="literal">false</span>,</div><div class="line">        width: <span class="number">300</span>,</div><div class="line">        close: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">            $.msg.error({</div><div class="line">                content: <span class="string">'alert框关闭'</span></div><div class="line">            });</div><div class="line">        },</div><div class="line">        open: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">            $.msg.log({</div><div class="line">                content: <span class="string">'alert框打开'</span></div><div class="line">            });</div><div class="line">        }</div><div class="line">    });</div><div class="line">});</div><div class="line">$(<span class="string">"#confirm"</span>).click(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">    $.confirm({</div><div class="line">        content: <span class="string">'请问您确定要取消关注吗？'</span>,</div><div class="line">        modal: <span class="literal">true</span>,</div><div class="line">        closeText: <span class="string">'取消'</span>,</div><div class="line">        okText: <span class="string">'确定'</span>,</div><div class="line">        fixed: <span class="literal">true</span>,</div><div class="line">        width: <span class="number">300</span>,</div><div class="line">        close: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">            $.msg.error({</div><div class="line">                content: <span class="string">'confirm框关闭'</span></div><div class="line">            });</div><div class="line">        },</div><div class="line">        ok: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">            $.msg.success({</div><div class="line">                content: <span class="string">'confirm框确认'</span></div><div class="line">            });</div><div class="line">        },</div><div class="line">        open: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">            $.msg.log({</div><div class="line">                content: <span class="string">'confirm框打开'</span></div><div class="line">            });</div><div class="line">        }</div><div class="line">    });</div><div class="line">});</div><div class="line">$(<span class="string">"#prompt"</span>).click(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">    $.prompt({</div><div class="line">        content: <span class="string">'请问您想叫啥？'</span>,</div><div class="line">        modal: <span class="literal">true</span>,</div><div class="line">        closeText: <span class="string">'取消'</span>,</div><div class="line">        okText: <span class="string">'确定'</span>,</div><div class="line">        fixed: <span class="literal">true</span>,</div><div class="line">        defaultValue: <span class="string">'default'</span>,</div><div class="line">        remind: <span class="string">'remind'</span>,</div><div class="line">        width: <span class="number">300</span>,</div><div class="line">        close: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">            $.msg.error({</div><div class="line">                content: <span class="string">'prompt框关闭'</span></div><div class="line">            });</div><div class="line">        },</div><div class="line">        ok: <span class="function"><span class="keyword">function</span><span class="params">(val)</span></span>{</div><div class="line">            $.msg.error({</div><div class="line">                content: <span class="string">'prompt框确认，输入值为：'</span> + val</div><div class="line">            });</div><div class="line">        },</div><div class="line">        open: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">            $.msg.log({</div><div class="line">                content: <span class="string">'prompt框打开'</span></div><div class="line">            });</div><div class="line">        }</div><div class="line">    });</div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<button id="alert" class="btn btn-open">alert</button>
+<button id="confirm" class="btn btn-open">confirm</button>
+<button id="prompt" class="btn btn-open">prompt</button>
+<script type="text/javascript">
+    $("#alert").click(function(){
+        $.alert({
+            content: '发生错误了～',
+            modal: true,
+            closeText: '关闭',
+            fixed: false,
+            width: 300,
+            close: function(){
+                $.msg.error({
+                    content: 'alert框关闭'
+                });
+            },
+            open: function() {
+                $.msg.log({
+                    content: 'alert框打开'
+                });
+            }
+        });
+    });
+    $("#confirm").click(function(){
+        $.confirm({
+            content: '请问您确定要取消关注吗？',
+            modal: true,
+            closeText: '取消',
+            okText: '确定',
+            fixed: true,
+            width: 300,
+            close: function(){
+                $.msg.error({
+                    content: 'confirm框关闭'
+                });
+            },
+            ok: function(){
+                $.msg.success({
+                    content: 'confirm框确认'
+                });
+            },
+            open: function() {
+                $.msg.log({
+                    content: 'confirm框打开'
+                });
+            }
+        });
+    });
+    $("#prompt").click(function(){
+        $.prompt({
+            content: '请问您想叫啥？',
+            modal: true,
+            closeText: '取消',
+            okText: '确定',
+            fixed: true,
+            defaultValue: 'default',
+            remind: 'remind',
+            width: 300,
+            close: function(){
+                $.msg.error({
+                    content: 'prompt框关闭'
+                });
+            },
+            ok: function(val){
+                $.msg.error({
+                    content: 'prompt框确认，输入值为：' + val
+                });
+            },
+            open: function() {
+                $.msg.log({
+                    content: 'prompt框打开'
+                });
+            }
+        });
+    });
+</script>
+
+
+<h1 id="配置">配置</h1>
+<h2 id="说明">说明</h2>
+<p>alert支持的配置有：</p>
+<ul>
+<li>content</li>
+<li>modal</li>
+<li>fixed</li>
+<li>css</li>
+<li>closeText</li>
+<li>width</li>
+<li>height</li>
+<li>open</li>
+<li>close</li>
+</ul>
+<p>confirm在alert基础上增加：</p>
+<ul>
+<li>okText</li>
+<li>ok</li>
+</ul>
+<p>prompt在confirm基础上增加：</p>
+<ul>
+<li>defaultValue</li>
+<li>remind</li>
+</ul>
+<h2 id="content">content</h2>
+<p>提示框的内容，HTML String，默认为<code>&#39;&#39;</code></p>
+<h2 id="modal">modal</h2>
+<p>是否为模态提示框，Boolean，默认为<code>false</code></p>
+
+    <button class="btn btn-open" id="isModal">模态提示框</button>
+    <button class="btn btn-open" id="isNotModal">非模态提示框</button>
+    <script type="text/javascript">
+        $("#isModal").click(function(){
+            $.alert({
+                content: '这是个模态alert',
+                modal: true,
+                closeText: '关闭',
+                width: 300
+            });
+        });
+        $("#isNotModal").click(function(){
+            $.alert({
+                content: '这是个非模态alert',
+                modal: false,
+                closeText: '关闭',
+                width: 300
+            });
+        });
+    </script>
+
+
+<h2 id="fixed">fixed</h2>
+<p>是否固定在屏幕中间，Boolean，默认为<code>false</code></p>
+
+    <button class="btn btn-open" id="isFiexed">fixed提示框</button>
+    <button class="btn btn-open" id="isNotFixed">非fixed提示框</button>
+    <script type="text/javascript">
+        $("#isFiexed").click(function(){
+            $.alert({
+                content: '这是个fixed alert',
+                fixed: true,
+                closeText: '关闭',
+                width: 300,
+                modal: true
+            });
+        });
+        $("#isNotFixed").click(function(){
+            $.alert({
+                content: '这是个非fixed alert',
+                fixed: false,
+                closeText: '关闭',
+                width: 300,
+                modal: true
+            });
+        });
+    </script>
+
+
+<h2 id="closeText">closeText</h2>
+<p>关闭按钮的文案，String，默认为<code>&#39;close&#39;</code></p>
+<h2 id="okText">okText</h2>
+<p>确认按钮的文案，String，默认为<code>&#39;ok&#39;</code></p>
+<p>仅confirm和prompt有效</p>
+<h2 id="width">width</h2>
+<p>提示框的宽度，Number或<code>&#39;auto&#39;</code>，默认为<code>&#39;auto&#39;</code></p>
+<h2 id="height">height</h2>
+<p>提示框的高度，Number或<code>&#39;auto&#39;</code>，默认为<code>&#39;auto&#39;</code></p>
+<h2 id="open">open</h2>
+<p>提示框弹出时的回调函数，Function</p>
+<h2 id="close">close</h2>
+<p>按下关闭按钮时的回调函数，Function</p>
+<h2 id="ok">ok</h2>
+<p>按下确定按钮时的回调函数，Function</p>
+<p>仅confirm和prompt有效，prompt将会把输入的内容以参数的形式传入</p>
+<h2 id="defaultValue">defaultValue</h2>
+<p>prompt输入框中的默认值，String</p>
+<p>仅prompt有效</p>
+<h2 id="remind">remind</h2>
+<p>prompt输入框的提示信息，String</p>
+<p>仅prompt有效</p>
+<h2 id="css">css</h2>
+<p>自定义样式对象，默认如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">css: {</div><div class="line">    panel: <span class="string">'wd-ui-pn'</span>,</div><div class="line">    content: <span class="string">'wd-ui-ctn'</span>,</div><div class="line">    footer: <span class="string">'wd-ui-ft'</span>,</div><div class="line">    close: <span class="string">'wd-ui-close'</span>,</div><div class="line">    ok: <span class="string">'wd-ui-ok'</span>,</div><div class="line">    input: <span class="string">'wd-ui-ipt'</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>其中ok仅prompt和confirm有效，input仅prompt有效</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[
+<link rel="stylesheet" type="text/css" href="/css/widget/jquery-widget-min.css">
+<link rel="stylesheet" type="text/css" href="/css/alert/jq]]>
+    </summary>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
+    
+      <category term="插件" scheme="http://yoursite.com/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[jQuery提示插件——jQuery-tip]]></title>
+    <link href="http://yoursite.com/2014/09/07/jquery-tip/"/>
+    <id>http://yoursite.com/2014/09/07/jquery-tip/</id>
+    <published>2014-09-07T09:26:25.000Z</published>
+    <updated>2014-09-14T12:01:54.000Z</updated>
+    <content type="html"><![CDATA[
+<link rel="stylesheet" type="text/css" href="/css/widget/jquery-widget-min.css">
+<link rel="stylesheet" type="text/css" href="/css/tip/jquery-tip-min.css">
+<link rel="stylesheet" type="text/css" href="/css/tip.css">
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.js"></script>
+<script type="text/javascript" src="/js/align/jquery-align-min.js"></script>
+<script type="text/javascript" src="/js/tip/jquery-tip-min.js"></script>
+
+
+<h1 id="简介">简介</h1>
+<p>一个基于jQuery的消息提示插件</p>
+<h2 id="依赖">依赖</h2>
+<ul>
+<li>jquery-align</li>
+</ul>
+<h1 id="下载">下载</h1>
+<p><a href="https://github.com/LingyuCoder/jquery-tip" target="_blank" rel="external">Github地址</a></p>
+<h1 id="实例">实例</h1>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#clicktip'</span>).tip({</div><div class="line">    content: <span class="string">'这是一条点击提示'</span>,</div><div class="line">    trigger: <span class="string">'click'</span></div><div class="line">});</div><div class="line">$(<span class="string">'#hovertip'</span>).tip({</div><div class="line">    content: <span class="string">'这是一条悬停提示'</span>,</div><div class="line">    trigger: <span class="string">'hover'</span></div><div class="line">});</div><div class="line">$(<span class="string">'#alwaystip'</span>).tip({</div><div class="line">    content: <span class="string">'这条会一直显示'</span>,</div><div class="line">    trigger: <span class="string">'always'</span></div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<button id="clicktip" class="btn btn-open">点击显示</button>
+<button id="hovertip" class="btn btn-open" style="margin-left: 100px">悬停显示</button>
+<button id="alwaystip" class="btn btn-open" style="margin-left: 100px">一直显示</button>
+<script type="text/javascript">
+$('#clicktip').tip({
+    content: '这是一条点击提示',
+    trigger: 'click'
+});
+$('#hovertip').tip({
+    content: '这是一条悬停提示',
+    trigger: 'hover'
+});
+$('#alwaystip').tip({
+    content: '这条会一直显示',
+    trigger: 'always'
+});
+</script>
+
+
+<h1 id="配置">配置</h1>
+<h2 id="content">content</h2>
+<p>定义需要展示的内容，可以为HTML字符串，默认为<code>&#39;&#39;</code></p>
+<h2 id="trigger">trigger</h2>
+<p>触发提示的操作类型，可为<code>&#39;hover&#39;</code>或<code>&#39;click&#39;</code>或’<code>always</code>‘，为always时将一直显示，默认为<code>&#39;hover&#39;</code></p>
+<h2 id="align">align</h2>
+<p>提示框的位置，使用jQuery-align定位，增加一个base类型<code>&#39;self&#39;</code>，以触发提示的元素为基准。默认为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">align: {</div><div class="line">    base: <span class="string">'self'</span>,</div><div class="line">    points: [<span class="string">'bc'</span>, <span class="string">'tc'</span>],</div><div class="line">    fixed: <span class="literal">false</span>,</div><div class="line">    offset: [<span class="number">0</span>, <span class="number">0</span>]</div><div class="line">}</div></pre></td></tr></table></figure>
+
+
+<button id="alignClick" class="btn btn-open">帮助</button>
+<br>
+<br>
+<div id="alignSquare" style="width: 100px;height: 100px;background: cornflowerblue;line-height: 100px;color:#fff">点上面的帮助</div>
+<script type="text/javascript">
+    $('#alignClick').tip({
+        content: '这是一个蓝色的方块',
+        align: {
+            base: '#alignSquare',
+            points: ['cr', 'cl'],
+            offset: [10, 0]
+        },
+        trigger: 'click',
+        arrow: {
+            type: 'left',
+            size: 10,
+            color: 'chocolate',
+            offset: 0
+        },
+        css: {
+            tip: 'sample-ui-tip',
+            arrow: 'sample-ui-tip-arrow'
+        }
+    });
+</script>
+
+
+<h2 id="arrow">arrow</h2>
+<p>提示框箭头设置，为对象或者<code>false</code>，若为false，则不显示箭头。为对象时有如下几个配置：</p>
+<ul>
+<li>type: String，箭头的位置，可选为<code>&#39;top&#39;</code>、<code>&#39;bottom&#39;</code>、<code>&#39;left&#39;</code>、<code>&#39;right&#39;</code></li>
+<li>size: Number，箭头的大小</li>
+<li>color: Color String, 箭头的颜色，规则同CSS</li>
+<li>offset: Number，箭头的位置偏移，有如下两种情况：<ol>
+<li>type为<code>&#39;top&#39;</code>或<code>&#39;bottom&#39;</code>时，offset为正数将向右偏移，为负数则向左偏移</li>
+<li>type为<code>&#39;left&#39;</code>或<code>&#39;right&#39;</code>时，offset为正数将向下偏移，为负数则向上偏移</li>
+</ol>
+</li>
+</ul>
+<p>默认为<code>false</code>，不显示箭头</p>
+<p>PS：配合align选项能够实现灵活的提示位置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#arrowTop'</span>).tip({</div><div class="line">    content: <span class="string">'我在下面'</span>,</div><div class="line">    align: {</div><div class="line">        base: <span class="string">'self'</span>,</div><div class="line">        points: [<span class="string">'bc'</span>, <span class="string">'tc'</span>],</div><div class="line">        offset: [<span class="number">0</span>, <span class="number">10</span>]</div><div class="line">    },</div><div class="line">    trigger: <span class="string">'always'</span>,</div><div class="line">    arrow: {</div><div class="line">        type: <span class="string">'top'</span>,</div><div class="line">        size: <span class="number">10</span>,</div><div class="line">        color: <span class="string">'chocolate'</span>,</div><div class="line">        offset: <span class="number">0</span></div><div class="line">    },</div><div class="line">    css: {</div><div class="line">        tip: <span class="string">'sample-ui-tip'</span>,</div><div class="line">        arrow: <span class="string">'sample-ui-tip-arrow'</span></div><div class="line">    }</div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<br>
+<br>
+<button id="arrowTop" class="btn btn-open">带箭头提示</button>
+<button id="arrowBottom" class="btn btn-open">带箭头提示</button>
+<button id="arrowLeft" class="btn btn-open" style="margin-left: 100px">带箭头提示</button>
+<button id="arrowRight" class="btn btn-open" style="margin-right: 100px">带箭头提示</button>
+<br>
+<br>
+<br>
+<script type="text/javascript">
+    $('#arrowTop').tip({
+        content: '我在下面',
+        align: {
+            base: 'self',
+            points: ['bc', 'tc'],
+            offset: [0, 10]
+        },
+        trigger: 'always',
+        arrow: {
+            type: 'top',
+            size: 10,
+            color: 'chocolate',
+            offset: 0
+        },
+        css: {
+            tip: 'sample-ui-tip',
+            arrow: 'sample-ui-tip-arrow'
+        }
+    });
+    $('#arrowBottom').tip({
+        content: '我在上面',
+        align: {
+            base: 'self',
+            points: ['tc', 'bc'],
+            offset: [0, -10]
+        },
+        trigger: 'always',
+        arrow: {
+            type: 'bottom',
+            size: 10,
+            color: 'chocolate',
+            offset: 0
+        },
+        css: {
+            tip: 'sample-ui-tip',
+            arrow: 'sample-ui-tip-arrow'
+        }
+    });
+    $('#arrowLeft').tip({
+        content: '我在左边',
+        align: {
+            base: 'self',
+            points: ['cl', 'cr'],
+            offset: [-10, 0]
+        },
+        trigger: 'always',
+        arrow: {
+            type: 'right',
+            size: 10,
+            color: 'chocolate',
+            offset: 0
+        },
+        css: {
+            tip: 'sample-ui-tip',
+            arrow: 'sample-ui-tip-arrow'
+        }
+    });
+    $('#arrowRight').tip({
+        content: '我在右边',
+        align: {
+            base: 'self',
+            points: ['cr', 'cl'],
+            offset: [10, 0]
+        },
+        trigger: 'always',
+        arrow: {
+            type: 'left',
+            size: 10,
+            color: 'chocolate',
+            offset: 0
+        },
+        css: {
+            tip: 'sample-ui-tip',
+            arrow: 'sample-ui-tip-arrow'
+        }
+    });
+
+</script>
+
+
+<h2 id="duration">duration</h2>
+<p>仅当trigger为<code>&#39;click&#39;</code>的时候启用，点击后提示存在的时间，到时见会自动消失，为<code>false</code>表示不会自动消失，默认为<code>false</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#duraClick'</span>).tip({</div><div class="line">    content: <span class="string">'五秒后我自己会消失'</span>,</div><div class="line">    align: {</div><div class="line">        base: <span class="string">'self'</span>,</div><div class="line">        points: [<span class="string">'tc'</span>, <span class="string">'bc'</span>],</div><div class="line">        offset: [<span class="number">0</span>, -<span class="number">10</span>]</div><div class="line">    },</div><div class="line">    trigger: <span class="string">'click'</span>,</div><div class="line">    duration: <span class="number">5000</span>,</div><div class="line">    arrow: {</div><div class="line">        type: <span class="string">'bottom'</span>,</div><div class="line">        size: <span class="number">10</span>,</div><div class="line">        color: <span class="string">'chocolate'</span>,</div><div class="line">        offset: <span class="number">0</span></div><div class="line">    },</div><div class="line">    css: {</div><div class="line">        tip: <span class="string">'sample-ui-tip'</span>,</div><div class="line">        arrow: <span class="string">'sample-ui-tip-arrow'</span></div><div class="line">    }</div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<button id="duraClick" class="btn btn-open">点我</button>
+<script type="text/javascript">
+    $('#duraClick').tip({
+        content: '五秒后我自己会消失',
+        align: {
+            base: 'self',
+            points: ['tc', 'bc'],
+            offset: [0, -10]
+        },
+        trigger: 'click',
+        duration: 5000,
+        arrow: {
+            type: 'bottom',
+            size: 10,
+            color: 'chocolate',
+            offset: 0
+        },
+        css: {
+            tip: 'sample-ui-tip',
+            arrow: 'sample-ui-tip-arrow'
+        }
+    });
+</script>
+
+
+<h1 id="公用tip">公用tip</h1>
+<p>可以通过jQuery选择器选择多个对象，他们将公用一个tip</p>
+
+<button class="btn btn-open btn-common-click btn-1">点击公用tip</button>
+<button class="btn btn-open btn-common-click btn-2">点击公用tip</button>
+<button class="btn btn-open btn-common-click btn-3">点击公用tip</button>
+<script type="text/javascript">
+    $('.btn-common-click').tip({
+        content: '我在右边',
+        align: {
+            base: 'self',
+            points: ['cr', 'cl'],
+            offset: [10, 0]
+        },
+        trigger: 'click',
+        arrow: {
+            type: 'left',
+            size: 10,
+            color: 'chocolate',
+            offset: 0
+        },
+        css: {
+            tip: 'sample-ui-tip',
+            arrow: 'sample-ui-tip-arrow'
+        }
+    });
+</script>
+
+
+<h2 id="css">css</h2>
+<p>一个对象，用于提供自定义的css，默认为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">css: {</div><div class="line">    tip: <span class="string">'wd-ui-tip'</span>,</div><div class="line">    arrow: <span class="string">'wd-ui-tip-arrow'</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[
+<link rel="stylesheet" type="text/css" href="/css/widget/jquery-widget-min.css">
+<link rel="stylesheet" type="text/css" href="/css/tip/jque]]>
+    </summary>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
+    
+      <category term="插件" scheme="http://yoursite.com/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[jQuery消息提示插件——jQuery-message]]></title>
+    <link href="http://yoursite.com/2014/09/07/jquery-message/"/>
+    <id>http://yoursite.com/2014/09/07/jquery-message/</id>
+    <published>2014-09-07T09:26:25.000Z</published>
+    <updated>2014-09-14T12:01:36.000Z</updated>
+    <content type="html"><![CDATA[
+<link rel="stylesheet" type="text/css" href="/css/widget/jquery-widget-min.css">
+<link rel="stylesheet" type="text/css" href="/css/message/jquery-message-min.css">
+<link rel="stylesheet" type="text/css" href="/css/message.css">
+
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.js"></script>
+
+<script type="text/javascript" src="/js/align/jquery-align-min.js"></script>
+<script type="text/javascript" src="/js/message/jquery-message-min.js"></script>
+
+
+<h1 id="简介">简介</h1>
+<p>一个基于jQuery的消息提示插件，提示出现在右下角</p>
+<h2 id="依赖">依赖</h2>
+<ul>
+<li>jquery-align</li>
+</ul>
+<h1 id="下载">下载</h1>
+<p><a href="https://github.com/LingyuCoder/jquery-message" target="_blank" rel="external">Github地址</a></p>
+<h1 id="实例">实例</h1>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//普通消息</span></div><div class="line">$.msg.log({</div><div class="line">    content: <span class="string">'你的狗出去玩了'</span>,</div><div class="line">    duration: <span class="number">5000</span></div><div class="line">});</div><div class="line"></div><div class="line"><span class="comment">//警告消息</span></div><div class="line">$.msg.warn({</div><div class="line">    content: <span class="string">'警告：你的狗和邻居的狗正在对视'</span>,</div><div class="line">    duration: <span class="number">5000</span></div><div class="line">});</div><div class="line"></div><div class="line"><span class="comment">//错误消息</span></div><div class="line">$.msg.error({</div><div class="line">    content: <span class="string">'你的狗和邻居的狗打起来了！'</span>,</div><div class="line">    duration: <span class="number">5000</span></div><div class="line">});</div><div class="line"></div><div class="line"><span class="comment">//成功消息</span></div><div class="line">$.msg.success({</div><div class="line">    content: <span class="string">'你的狗打赢了，凯旋而归！'</span>,</div><div class="line">    duration: <span class="number">5000</span></div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<button id="log" class="btn btn-open">提示</button>
+<button id="warn" class="btn btn-open">警告</button>
+<button id="error" class="btn btn-open">错误</button>
+<button id="success" class="btn btn-open">成功</button>
+<script type="text/javascript">
+    $('#success').click(function(){
+        $.msg.success({
+            content: '你的狗打赢了，凯旋而归！',
+            duration: 5000,
+            closeWhenClick: true
+        });
+    });
+    $('#error').click(function(){
+        $.msg.error({
+            content: '你的狗和邻居的狗打起来了！',
+            duration: 5000,
+            closeWhenClick: true
+        });
+    });
+    $('#warn').click(function(){
+        $.msg.warn({
+            content: '警告：你的狗和邻居的狗正在对视',
+            duration: 5000,
+            closeWhenClick: true
+        });
+    });
+    $('#log').click(function(){
+        $.msg.log({
+            content: '你的狗出去玩了',
+            duration: 5000,
+            closeWhenClick: true
+        });
+    });
+</script>
+
+
+<h1 id="配置">配置</h1>
+<h2 id="content">content</h2>
+<p>自定义展示的内容，为可以为HTML字符串</p>
+<h2 id="duration">duration</h2>
+<p>消息展示的时间，默认为5000，如果为<code>false</code>，则不会自动关闭</p>
+<h2 id="closeWhenClick">closeWhenClick</h2>
+<p>展示的消息能否通过点击来关闭，默认为<code>true</code></p>
+<h2 id="css">css</h2>
+<p>消息的自定义样式，默认为<code>&#39;wd-ui-msg wd-ui-log&#39;</code>，样式来自<code>jquery-message.css</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$.msg.error({</div><div class="line">    content: <span class="string">'你的狗出去玩走丢了，点击这里前去寻找'</span>,</div><div class="line">    duration: <span class="literal">false</span>,</div><div class="line">    closeWhenClick: <span class="literal">true</span>,</div><div class="line">    css: <span class="string">'sample-ui-msg sample-ui-err'</span></div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<button id="noAutoCloseBtn" class="btn btn-open">非自动关闭消息</button>
+<script type="text/javascript">
+    $('#noAutoCloseBtn').click(function(){
+        $.msg.error({
+            content: '你的狗出去玩走丢了，点击这里前去寻找',
+            duration: false,
+            closeWhenClick: true,
+            css: 'sample-ui-msg sample-ui-err'
+        });
+    });
+</script>
+
+
+
+
+
+]]></content>
+    <summary type="html">
+    <![CDATA[
+<link rel="stylesheet" type="text/css" href="/css/widget/jquery-widget-min.css">
+<link rel="stylesheet" type="text/css" href="/css/message/]]>
+    </summary>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
+    
+      <category term="插件" scheme="http://yoursite.com/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[jQuery弹窗插件——jQuery-widget]]></title>
+    <link href="http://yoursite.com/2014/09/02/jquery-widget/"/>
+    <id>http://yoursite.com/2014/09/02/jquery-widget/</id>
+    <published>2014-09-02T09:26:25.000Z</published>
+    <updated>2014-09-14T12:02:05.000Z</updated>
+    <content type="html"><![CDATA[
+<link rel="stylesheet" type="text/css" href="/css/widget/jquery-widget-min.css">
+<link rel="stylesheet" type="text/css" href="/css/message/jquery-message-min.css">
+<link rel="stylesheet" type="text/css" href="/css/widget.css">
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.js"></script>
+<script type="text/javascript" src="/js/align/jquery-align-min.js"></script>
+<script type="text/javascript" src="/js/widget/jquery-widget-min.js"></script>
+<script type="text/javascript" src="/js/message/jquery-message-min.js"></script>
+
+
+<h1 id="简介">简介</h1>
+<p>一个基于jQuery的弹窗插件，用于将一段内容包装成弹窗，支持模态和拖拽</p>
+<h2 id="依赖">依赖</h2>
+<ul>
+<li>jquery-align</li>
+</ul>
+<h1 id="下载">下载</h1>
+<p><a href="https://github.com/LingyuCoder/jquery-widget" target="_blank" rel="external">Github地址</a></p>
+<h1 id="实例">实例</h1>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> widget = $.widget({</div><div class="line">    content: <span class="string">'&lt;p&gt;这里是内容&lt;/p&gt;&lt;p&gt;这里是内容&lt;/p&gt;'</span>,</div><div class="line">    title: <span class="string">'&lt;h2&gt;这里是标题&lt;/h2&gt;'</span>,</div><div class="line">    footer: <span class="string">'&lt;strong&gt;这里是底部&lt;/strong&gt;'</span>,</div><div class="line">    modal: <span class="literal">false</span>,</div><div class="line">    dragable: <span class="literal">true</span>,</div><div class="line">    closeable: <span class="literal">true</span>,</div><div class="line">    autoOpen: <span class="literal">false</span>,</div><div class="line">    closeText: <span class="string">'点我关闭'</span>,</div><div class="line">    align: {</div><div class="line">        base: <span class="string">'screen'</span>,</div><div class="line">        points: [<span class="string">'cc'</span>, <span class="string">'cc'</span>],</div><div class="line">        fixed: <span class="literal">false</span>,</div><div class="line">        offset: [<span class="number">0</span>, <span class="number">0</span>]</div><div class="line">    },</div><div class="line">    width: <span class="number">500</span>,</div><div class="line">    height: <span class="string">'auto'</span>,</div><div class="line">    close: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">        $.msg.error({</div><div class="line">            content: <span class="string">'弹窗关闭'</span>,</div><div class="line">            duration: <span class="number">3000</span></div><div class="line">        });</div><div class="line">    },</div><div class="line">    open: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">        $.msg.success({</div><div class="line">            content: <span class="string">'弹窗打开'</span>,</div><div class="line">            duration: <span class="number">3000</span></div><div class="line">        });</div><div class="line">    }</div><div class="line">});</div><div class="line">$(<span class="string">"#open"</span>).click(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    widget.open();</div><div class="line">});</div><div class="line">$(<span class="string">"#close"</span>).click(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    widget.close();</div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<button id="open" class="btn btn-open">打开</button>
+<button id="close" class="btn btn-close">关闭</button>
+<script type="text/javascript">
+$(function() {
+    var widget = $.widget({
+        content: '<p>这里是内容</p><p>这里是内容</p>',
+        title: '<h2>这里是标题</h2>',
+        footer: '<strong>这里是底部</strong>',
+        modal: false,
+        dragable: true,
+        closeable: true,
+        autoOpen: false,
+        closeText: '点我关闭',
+        align: {
+            base: 'screen',
+            points: ['cc', 'cc'],
+            fixed: false,
+            offset: [0, 0]
+        },
+        width: 500,
+        height: 'auto',
+        close: function() {
+            $.msg.error({
+                content: '弹窗关闭',
+                duration: 3000
+            });
+        },
+        open: function() {
+            $.msg.success({
+                content: '弹窗打开',
+                duration: 3000
+            });
+        }
+    });
+    $("#open").click(function() {
+        widget.open();
+    });
+    $("#close").click(function() {
+        widget.close();
+    });
+});
+</script>
+
+
+<h1 id="配置">配置</h1>
+<h2 id="content">content</h2>
+<p>内容区的HTML，支持HTML Stirng、HTMLElement、jQuery对象或者false，默认为 ‘’空字符串，为 false将隐藏区域</p>
+<h2 id="title">title</h2>
+<p>标题栏的HTML，支持HTML Stirng、HTMLElement、jQuery对象或者false，默认为 ‘’空字符串，为 false将隐藏区域</p>
+<h2 id="footer">footer</h2>
+<p>底部的HTML，支持HTML Stirng、HTMLElement、jQuery对象或者false，默认为 ‘’空字符串，为 false将隐藏区域</p>
+<h2 id="modal">modal</h2>
+<p>是否为模态弹窗，Boolean，默认为 false</p>
+
+<button id="openModalWidget" class="btn btn-open">打开模态弹窗</button>
+<script type="text/javascript">
+$(function() {
+    var widget = $.widget({
+        content: '<p>一些内容</p>',
+        title: '<h2>模态弹窗实例</h2>',
+        modal: true,
+        dragable: true,
+        closeable: true,
+        autoOpen: false,
+        closeText: '关闭模态弹窗',
+        align: {
+            base: 'screen',
+            points: ['cc', 'cc'],
+            fixed: false,
+            offset: [0, 0]
+        },
+        width: 500,
+        height: 'auto',
+        close: function() {
+            $.msg.error({
+                content: '模态弹窗关闭',
+                duration: 3000
+            });
+        },
+        open: function() {
+            $.msg.success({
+                content: '模态弹窗打开',
+                duration: 3000
+            });
+        }
+    });
+    $("#openModalWidget").click(function() {
+        widget.open();
+    });
+}); 
+</script>
+
+
+<h2 id="dragable">dragable</h2>
+<p>是否可通过点击标题栏进行拖拽，Boolean，仅在title不为false时候有效，默认为 true</p>
+<h2 id="closeable">closeable</h2>
+<p>是否在底部生成关闭按钮，Boolean，默认为 true</p>
+<h2 id="closeText">closeText</h2>
+<p>closeable为true时有效，为关闭按钮的文案</p>
+
+<button id="noCloseWidgetOpen" class="btn btn-open">打开</button>
+<button id="noCloseWidgetClose" class="btn btn-close">关闭</button>
+<script type="text/javascript">
+$(function() {
+    var widget = $.widget({
+        content: '<p>这个对话框没有关闭按钮，需要关闭请点击“关闭”</p>',
+        title: '<h2>无关闭按钮</h2>',
+        footer: '<p>这里是Footer</p>',
+        modal: false,
+        dragable: true,
+        closeable: false,
+        autoOpen: false,
+        align: {
+            base: 'screen',
+            points: ['cc', 'cc'],
+            fixed: false,
+            offset: [0, 0]
+        },
+        close: function() {
+            $.msg.error({
+                content: '弹窗关闭',
+                duration: 3000
+            });
+        },
+        open: function() {
+            $.msg.success({
+                content: '弹窗打开',
+                duration: 3000
+            });
+        }
+    });
+    $("#noCloseWidgetOpen").click(function() {
+        widget.open();
+    });
+    $("#noCloseWidgetClose").click(function() {
+        widget.close();
+    });
+});
+</script>
+
+
+<h2 id="align">align</h2>
+<p>弹窗的位置，和jquery-align规则相同，默认为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">align: {</div><div class="line">    base: <span class="string">'screen'</span>,</div><div class="line">    points: [<span class="string">'cc'</span>, <span class="string">'cc'</span>],</div><div class="line">    fixed: <span class="literal">false</span>,</div><div class="line">    offset: [<span class="number">0</span>, <span class="number">0</span>]</div><div class="line">}</div></pre></td></tr></table></figure>
+
+
+<button id="alignOpen" class="btn btn-open">显示在按钮旁边</button>
+<button id="fixedOpen" class="btn btn-open">固定在屏幕上</button>
+<script type="text/javascript">
+$(function() {
+    var widget = $.widget({
+        content: '<p>这个对话框显示在按钮旁边</p>',
+        title: '<h2>显示在按钮旁边</h2>',
+        footer: '<p>这里是Footer</p>',
+        modal: false,
+        dragable: true,
+        closeable: true,
+        autoOpen: false,
+        closeText: '关闭',
+        align: {
+            base: '#alignOpen',
+            points: ['tc', 'bc'],
+            fixed: false
+        },
+        close: function() {
+            $.msg.error({
+                content: '弹窗关闭',
+                duration: 3000
+            });
+        },
+        open: function() {
+            $.msg.success({
+                content: '弹窗打开',
+                duration: 3000
+            });
+        }
+    });
+    $("#alignOpen").click(function() {
+        widget.open();
+    });
+
+    var widget2 = $.widget({
+        content: '<p>这个对话框固定在屏幕中间</p>',
+        title: '<h2>固定在屏幕中间</h2>',
+        footer: '<p>这里是Footer</p>',
+        modal: true,
+        dragable: true,
+        closeable: true,
+        autoOpen: false,
+        closeText: '关闭',
+        align: {
+            base: 'screen',
+            points: ['cc', 'cc'],
+            fixed: true
+        },
+        close: function() {
+            $.msg.error({
+                content: '弹窗关闭',
+                duration: 3000
+            });
+        },
+        open: function() {
+            $.msg.success({
+                content: '弹窗打开',
+                duration: 3000
+            });
+        }
+    });
+    $("#fixedOpen").click(function() {
+        widget2.open();
+    });
+});
+</script>
+
+
+<h2 id="width">width</h2>
+<p>弹窗的宽度，Number或 ‘auto’，默认为 auto</p>
+<h2 id="height">height</h2>
+<p>弹窗的高度，Number或 ‘auto’，默认为 auto</p>
+<h2 id="open">open</h2>
+<p>弹窗打开时执行，Function</p>
+<h2 id="close">close</h2>
+<p>弹窗关闭时执行，Function</p>
+<h2 id="css">css</h2>
+<p>用于自定义弹窗样式的对象，默认值如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">css: {</div><div class="line">    panel: <span class="string">'wd-ui-pn'</span>,</div><div class="line">    title: <span class="string">'wd-ui-tt'</span>,</div><div class="line">    content: <span class="string">'wd-ui-ctn'</span>,</div><div class="line">    footer: <span class="string">'wd-ui-ft'</span>,</div><div class="line">    close: <span class="string">'wd-ui-close'</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<ul>
+<li>panel: 弹窗窗体使用的样式</li>
+<li>title: 标题栏使用的样式</li>
+<li>content: 内容区域使用的样式</li>
+<li>footer: 底部使用的样式</li>
+<li>close: 关闭按钮使用的样式<br>默认样式来自 jquery-widget.css</li>
+</ul>
+<h1 id="方法">方法</h1>
+<h2 id="open-1">open</h2>
+<p>打开弹窗，并触发open事件</p>
+<h2 id="close-1">close</h2>
+<p>关闭弹窗，并触发close事件</p>
+<h2 id="destroy">destroy</h2>
+<p>销毁弹窗</p>
+<h2 id="isOpened">isOpened</h2>
+<p>检测弹窗是否被打开</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[
+<link rel="stylesheet" type="text/css" href="/css/widget/jquery-widget-min.css">
+<link rel="stylesheet" type="text/css" href="/css/message/]]>
+    </summary>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
+    
+      <category term="插件" scheme="http://yoursite.com/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[jQuery元素定位插件——jQuery-align]]></title>
+    <link href="http://yoursite.com/2014/08/30/jquery-align/"/>
+    <id>http://yoursite.com/2014/08/30/jquery-align/</id>
+    <published>2014-08-30T09:26:25.000Z</published>
+    <updated>2014-09-14T12:01:13.000Z</updated>
+    <content type="html"><![CDATA[
+<link rel="stylesheet" type="text/css" href="/css/align.css">
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.js"></script>
+<script type="text/javascript" src="/js/align/jquery-align-min.js"></script>
+
+
+<h1 id="简介">简介</h1>
+<p>一个使用jQuery元素定位插件，用于将元素快速进行定位，目前可以将如下内容作为基准定位：</p>
+<ul>
+<li>目标元素</li>
+<li>当前屏幕</li>
+<li>整个页面</li>
+<li>鼠标事件</li>
+<li>坐标</li>
+</ul>
+<h2 id="依赖">依赖</h2>
+<ul>
+<li>jQuery</li>
+</ul>
+<h1 id="下载">下载</h1>
+<p><a href="https://github.com/LingyuCoder/jquery-align" target="_blank" rel="external">Github地址</a></p>
+<h1 id="使用">使用</h1>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".someNodes"</span>).align({</div><div class="line">    base: <span class="string">'#base'</span>,</div><div class="line">    points: [<span class="string">'tr'</span>, <span class="string">'tl'</span>],</div><div class="line">    offset: [<span class="number">0</span>, <span class="number">0</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
+
+<h1 id="配置">配置</h1>
+<h2 id="base">base</h2>
+<p>元素位置的基准元素，提供如下类型，默认为<code>&#39;screen&#39;</code></p>
+<h3 id="jQuery选择器或节点">jQuery选择器或节点</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-jq'</span>).align({</div><div class="line">    base: <span class="string">'.demo-base-jq'</span></div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<div class="demo-node demo-node-jq">我会根据蓝方块来定位，我俩中心会重合</div>
+<div class="demo-base demo-base-jq"></div>
+<button id="btn-show-jq" class="btn-show">显示</button>
+<button id="btn-hide-jq" class="btn-hide">隐藏</button>
+<script type="text/javascript">
+$(function(){
+    var node = $('.demo-node-jq').hide();
+    $('#btn-show-jq').click(function(){
+        node.align({
+            base: '.demo-base-jq'
+        });
+        node.show();
+    });
+    $('#btn-hide-jq').click(function(){
+        node.hide();
+    });
+})
+</script>
+
+
+
+<h3 id="当前屏幕">当前屏幕</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-screen'</span>).align({</div><div class="line">    base: <span class="string">'screen'</span></div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<div class="demo-node demo-node-screen">显示在屏幕正中间，但不随着页面滚动而移动</div>
+<button id="btn-show-screen" class="btn-show">显示</button>
+<button id="btn-hide-screen" class="btn-hide">隐藏</button>
+<script type="text/javascript">
+    $(function(){
+        var node = $('.demo-node-screen').hide();
+        $('#btn-show-screen').click(function(){
+            node.show().align({
+                base: 'screen'
+            });
+        });
+        $('#btn-hide-screen').click(function(){
+            node.hide();
+        });
+    })
+</script>
+
+
+<h3 id="整个页面">整个页面</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-page'</span>).align({</div><div class="line">    base: <span class="string">'page'</span>,</div><div class="line">    points: [<span class="string">'tl'</span>, <span class="string">'tl'</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<div class="demo-node demo-node-page">显示在页头右上角</div>
+<button id="btn-show-page" class="btn-show">显示</button>
+<button id="btn-hide-page" class="btn-hide">隐藏</button>
+<p>将显示在页面右上角</p>
+<script type="text/javascript">
+    $(function(){
+        var node = $('.demo-node-page').hide();
+        $('#btn-show-page').click(function(){
+            node.show().align({
+                base: 'page',
+                points: ['tr', 'tr']
+            });
+            $(window).scrollTop(0);
+        });
+        $('#btn-hide-page').click(function(){
+            node.hide();
+        });
+    })
+</script>
+
+
+<h3 id="鼠标事件">鼠标事件</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span><span class="params">(event)</span></span>{</div><div class="line">    node.align({</div><div class="line">        base: event</div><div class="line">    });</div><div class="line">};</div><div class="line">$(<span class="string">'.demo-node-mouse'</span>).click(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">    node.show();</div><div class="line">    $(<span class="built_in">document</span>).on(<span class="string">'click'</span>, fn);</div><div class="line">});</div><div class="line">$(<span class="string">'.demo-node-mouse'</span>).click(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">    node.hide();</div><div class="line">    $(<span class="built_in">document</span>).off(<span class="string">'click'</span>, fn);</div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<div class="demo-node demo-node-mouse">点击空白处，我将飞过去</div>
+<button id="btn-show-mouse" class="btn-show">显示</button>
+<button id="btn-hide-mouse" class="btn-hide">隐藏</button>
+<script type="text/javascript">
+    $(function(){
+        var node = $('.demo-node-mouse').hide();
+        var fn = function(event){
+            node.align({
+                base: event
+            });
+        };
+        
+        $('#btn-show-mouse').click(function(){
+            node.show();
+            $(document).on('click', fn);
+        });
+        $('#btn-hide-mouse').click(function(){
+            node.hide();
+            $(document).off('click', fn);
+        });
+    })
+</script>
+
+
+<h3 id="页面相对坐标">页面相对坐标</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-point'</span>).align({</div><div class="line">    base: [<span class="number">400</span>, <span class="number">3300</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<div class="demo-node demo-node-point">显示坐标为x:400  y:3300</div>
+<button id="btn-show-point" class="btn-show">显示</button>
+<button id="btn-hide-point" class="btn-hide">隐藏</button>
+<script type="text/javascript">
+    $(function(){
+        var node = $('.demo-node-point').hide();
+        $('#btn-show-point').click(function(){
+            node.show();
+            node.align({
+                base: [400, 3300]
+            });
+        });
+        $('#btn-hide-point').click(function(){
+            node.hide();
+        });
+    })
+</script>
+
+
+<h2 id="基准点名称">基准点名称</h2>
+<p>含有两个字符串的数组，前者为参照元素的基准点名称，后者为被定位元素的基准点名称，这两个基准点将重合。默认为:<code>[&#39;cc&#39;, &#39;cc&#39;]</code></p>
+<p>基准点名称如下图所示：</p>
+<p><img src="http://skyinlayerblog.qiniudn.com/github%2Falign-points.png" alt="基准点名称"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-points'</span>).align({</div><div class="line">    base: <span class="string">'.demo-base-points'</span>,</div><div class="line">    points: [<span class="string">'cc'</span>, <span class="string">'tl'</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<div class="demo-node demo-node-points">我的左上角将和蓝方块的中心重合</div>
+<div class="demo-base demo-base-points"></div>
+<button id="btn-show-points" class="btn-show">显示</button>
+<button id="btn-hide-points" class="btn-hide">隐藏</button>
+<script type="text/javascript">
+    $(function(){
+        var node = $('.demo-node-points').hide();
+        $('#btn-show-points').click(function(){
+            node.show().align({
+                base: '.demo-base-points',
+                points: ['cc', 'tl']
+            });
+        });
+        $('#btn-hide-points').click(function(){
+            node.hide();
+        });
+    })
+</script>
+
+
+<h2 id="offset">offset</h2>
+<p>含有两个数字的数组，前者为x轴偏移，后者为y轴偏移，默认为: <code>[0, 0]</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-offset'</span>).align({</div><div class="line">    base: <span class="string">'.demo-base-offset'</span>,</div><div class="line">    points: [<span class="string">'tl'</span>, <span class="string">'tl'</span>]</div><div class="line">    offset: [<span class="number">10</span>, <span class="number">10</span>]</div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<div class="demo-node demo-node-offset">我的左上角，将在蓝方块的左上角右下10px的位置</div>
+<div class="demo-base demo-base-offset"></div>
+<button id="btn-show-offset" class="btn-show">显示</button>
+<button id="btn-hide-offset" class="btn-hide">隐藏</button>
+<script type="text/javascript">
+    $(function(){
+        var node = $('.demo-node-offset').hide();
+        $('#btn-show-offset').click(function(){
+            node.show().align({
+                base: '.demo-base-offset',
+                points: ['tl', 'tl'],
+                offset: [10, 10]
+            });
+        });
+        $('#btn-hide-offset').click(function(){
+            node.hide();
+        });
+    })
+</script>
+
+
+<h2 id="fixed">fixed</h2>
+<p>仅当base为<code>screen</code>时有效，表示是否固定与屏幕，默认为<code>false</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.demo-node-fixed'</span>).align({</div><div class="line">    base: <span class="string">'screen'</span>,</div><div class="line">    fixed: <span class="literal">true</span></div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<div class="demo-node demo-node-fixed">我会一直显示在屏幕中间，记得点关闭</div>
+<button id="btn-show-fixed" class="btn-show">显示</button>
+<button id="btn-hide-fixed" class="btn-hide">隐藏</button>
+<script type="text/javascript">
+    $(function(){
+        var node = $('.demo-node-fixed').hide();
+        $('#btn-show-fixed').click(function(){
+            node.show().align({
+                base: 'screen',
+                fixed: true
+            });
+        });
+        $('#btn-hide-fixed').click(function(){
+            node.hide();
+        });
+    })
+</script>
+]]></content>
+    <summary type="html">
+    <![CDATA[
+<link rel="stylesheet" type="text/css" href="/css/align.css">
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc]]>
+    </summary>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
+    
+      <category term="插件" scheme="http://yoursite.com/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+</feed>
