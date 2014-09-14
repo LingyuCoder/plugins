@@ -5,7 +5,7 @@
 # Site
 title: 天镶的插件库
 subtitle: 没事敲插件
-description: 
+description: 天镶的插件库，就爱敲插件
 author: 天镶
 email: lingyucoder@gmail.com
 language: zh-CN
@@ -37,7 +37,7 @@ relative_link: false
 highlight:
   enable: true
   line_number: true
-  tab_replace:
+  tab_replace: 4
 
 # Category & Tag
 default_category: uncategorized
@@ -79,10 +79,15 @@ disqus_shortname: skyinlayer
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-theme: pacman
+theme: lingyu
 exclude_generator:
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type:
+
+feed:
+    type: atom
+    path: atom.xml
+    limit: 20

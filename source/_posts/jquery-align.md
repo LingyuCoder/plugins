@@ -1,9 +1,16 @@
 title: jQuery元素定位插件——jQuery-align
+subtitle: 一个使用jQuery元素定位插件，用于将元素快速进行定位
 date: 2014/8/30 17:26:25
+categories:
+- 插件
+tags:
+- JavaScript
+- jQuery
 ---
 
 <escape>
 <link rel="stylesheet" type="text/css" href="/css/align.css">
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.js"></script>
 <script type="text/javascript" src="/js/align/jquery-align-min.js"></script>
 </escape>
 
@@ -24,9 +31,9 @@ date: 2014/8/30 17:26:25
 #使用
 ```javascript
 $(".someNodes").align({
-	base: '#base',
-	points: ['tr', 'tl'],
-	offset: [0, 0]
+    base: '#base',
+    points: ['tr', 'tl'],
+    offset: [0, 0]
 });
 ```
 
@@ -36,7 +43,7 @@ $(".someNodes").align({
 ###jQuery选择器或节点
 ```javascript
 $('.demo-node-jq').align({
-	base: '.demo-base-jq'
+    base: '.demo-base-jq'
 });
 ```
 
@@ -47,16 +54,16 @@ $('.demo-node-jq').align({
 <button id="btn-hide-jq" class="btn-hide">隐藏</button>
 <script type="text/javascript">
 $(function(){
-	var node = $('.demo-node-jq').hide();
-	$('#btn-show-jq').click(function(){
-		node.align({
-			base: '.demo-base-jq'
-		});
-		node.show();
-	});
-	$('#btn-hide-jq').click(function(){
-		node.hide();
-	});
+    var node = $('.demo-node-jq').hide();
+    $('#btn-show-jq').click(function(){
+        node.align({
+            base: '.demo-base-jq'
+        });
+        node.show();
+    });
+    $('#btn-hide-jq').click(function(){
+        node.hide();
+    });
 })
 </script>
 </escape>
@@ -65,7 +72,7 @@ $(function(){
 ###当前屏幕
 ```javascript
 $('.demo-node-screen').align({
-	base: 'screen'
+    base: 'screen'
 });
 ```
 
@@ -74,25 +81,25 @@ $('.demo-node-screen').align({
 <button id="btn-show-screen" class="btn-show">显示</button>
 <button id="btn-hide-screen" class="btn-hide">隐藏</button>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-screen').hide();
-		$('#btn-show-screen').click(function(){
-			node.show().align({
-				base: 'screen'
-			});
-		});
-		$('#btn-hide-screen').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-screen').hide();
+        $('#btn-show-screen').click(function(){
+            node.show().align({
+                base: 'screen'
+            });
+        });
+        $('#btn-hide-screen').click(function(){
+            node.hide();
+        });
+    })
 </script>
 </escape>
 
 ###整个页面
 ```javascript
 $('.demo-node-page').align({
-	base: 'page',
-	points: ['tl', 'tl']
+    base: 'page',
+    points: ['tl', 'tl']
 });
 ```
 
@@ -102,36 +109,36 @@ $('.demo-node-page').align({
 <button id="btn-hide-page" class="btn-hide">隐藏</button>
 <p>将显示在页面右上角</p>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-page').hide();
-		$('#btn-show-page').click(function(){
-			node.show().align({
-				base: 'page',
-				points: ['tr', 'tr']
-			});
-			$(window).scrollTop(0);
-		});
-		$('#btn-hide-page').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-page').hide();
+        $('#btn-show-page').click(function(){
+            node.show().align({
+                base: 'page',
+                points: ['tr', 'tr']
+            });
+            $(window).scrollTop(0);
+        });
+        $('#btn-hide-page').click(function(){
+            node.hide();
+        });
+    })
 </script>
 </escape>
 
 ###鼠标事件
 ```javascript
 var fn = function(event){
-	node.align({
-		base: event
-	});
+    node.align({
+        base: event
+    });
 };
 $('.demo-node-mouse').click(function(){
-	node.show();
-	$(document).on('click', fn);
+    node.show();
+    $(document).on('click', fn);
 });
 $('.demo-node-mouse').click(function(){
-	node.hide();
-	$(document).off('click', fn);
+    node.hide();
+    $(document).off('click', fn);
 });
 ```
 <escape>
@@ -139,30 +146,30 @@ $('.demo-node-mouse').click(function(){
 <button id="btn-show-mouse" class="btn-show">显示</button>
 <button id="btn-hide-mouse" class="btn-hide">隐藏</button>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-mouse').hide();
-		var fn = function(event){
-			node.align({
-				base: event
-			});
-		};
-		
-		$('#btn-show-mouse').click(function(){
-			node.show();
-			$(document).on('click', fn);
-		});
-		$('#btn-hide-mouse').click(function(){
-			node.hide();
-			$(document).off('click', fn);
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-mouse').hide();
+        var fn = function(event){
+            node.align({
+                base: event
+            });
+        };
+        
+        $('#btn-show-mouse').click(function(){
+            node.show();
+            $(document).on('click', fn);
+        });
+        $('#btn-hide-mouse').click(function(){
+            node.hide();
+            $(document).off('click', fn);
+        });
+    })
 </script>
 </escape>
 
 ###页面相对坐标
 ```javascript
 $('.demo-node-point').align({
-	base: [400, 3300]
+    base: [400, 3300]
 });
 ```
 
@@ -171,18 +178,18 @@ $('.demo-node-point').align({
 <button id="btn-show-point" class="btn-show">显示</button>
 <button id="btn-hide-point" class="btn-hide">隐藏</button>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-point').hide();
-		$('#btn-show-point').click(function(){
-			node.show();
-			node.align({
-				base: [400, 3300]
-			});
-		});
-		$('#btn-hide-point').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-point').hide();
+        $('#btn-show-point').click(function(){
+            node.show();
+            node.align({
+                base: [400, 3300]
+            });
+        });
+        $('#btn-hide-point').click(function(){
+            node.hide();
+        });
+    })
 </script>
 </escape>
 
@@ -195,8 +202,8 @@ $('.demo-node-point').align({
 
 ```javascript
 $('.demo-node-points').align({
-	base: '.demo-base-points',
-	points: ['cc', 'tl']
+    base: '.demo-base-points',
+    points: ['cc', 'tl']
 });
 ```
 
@@ -206,18 +213,18 @@ $('.demo-node-points').align({
 <button id="btn-show-points" class="btn-show">显示</button>
 <button id="btn-hide-points" class="btn-hide">隐藏</button>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-points').hide();
-		$('#btn-show-points').click(function(){
-			node.show().align({
-				base: '.demo-base-points',
-				points: ['cc', 'tl']
-			});
-		});
-		$('#btn-hide-points').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-points').hide();
+        $('#btn-show-points').click(function(){
+            node.show().align({
+                base: '.demo-base-points',
+                points: ['cc', 'tl']
+            });
+        });
+        $('#btn-hide-points').click(function(){
+            node.hide();
+        });
+    })
 </script>
 </escape>
 
@@ -225,9 +232,9 @@ $('.demo-node-points').align({
 含有两个数字的数组，前者为x轴偏移，后者为y轴偏移，默认为: `[0, 0]`
 ```javascript
 $('.demo-node-offset').align({
-	base: '.demo-base-offset',
-	points: ['tl', 'tl']
-	offset: [10, 10]
+    base: '.demo-base-offset',
+    points: ['tl', 'tl']
+    offset: [10, 10]
 });
 ```
 
@@ -237,19 +244,19 @@ $('.demo-node-offset').align({
 <button id="btn-show-offset" class="btn-show">显示</button>
 <button id="btn-hide-offset" class="btn-hide">隐藏</button>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-offset').hide();
-		$('#btn-show-offset').click(function(){
-			node.show().align({
-				base: '.demo-base-offset',
-				points: ['tl', 'tl'],
-				offset: [10, 10]
-			});
-		});
-		$('#btn-hide-offset').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-offset').hide();
+        $('#btn-show-offset').click(function(){
+            node.show().align({
+                base: '.demo-base-offset',
+                points: ['tl', 'tl'],
+                offset: [10, 10]
+            });
+        });
+        $('#btn-hide-offset').click(function(){
+            node.hide();
+        });
+    })
 </script>
 </escape>
 
@@ -257,8 +264,8 @@ $('.demo-node-offset').align({
 仅当base为`screen`时有效，表示是否固定与屏幕，默认为`false`
 ```javascript
 $('.demo-node-fixed').align({
-	base: 'screen',
-	fixed: true
+    base: 'screen',
+    fixed: true
 });
 ```
 
@@ -267,17 +274,17 @@ $('.demo-node-fixed').align({
 <button id="btn-show-fixed" class="btn-show">显示</button>
 <button id="btn-hide-fixed" class="btn-hide">隐藏</button>
 <script type="text/javascript">
-	$(function(){
-		var node = $('.demo-node-fixed').hide();
-		$('#btn-show-fixed').click(function(){
-			node.show().align({
-				base: 'screen',
-				fixed: true
-			});
-		});
-		$('#btn-hide-fixed').click(function(){
-			node.hide();
-		});
-	})
+    $(function(){
+        var node = $('.demo-node-fixed').hide();
+        $('#btn-show-fixed').click(function(){
+            node.show().align({
+                base: 'screen',
+                fixed: true
+            });
+        });
+        $('#btn-hide-fixed').click(function(){
+            node.hide();
+        });
+    })
 </script>
 </escape>

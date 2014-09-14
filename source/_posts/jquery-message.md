@@ -1,11 +1,19 @@
 title: jQuery消息提示插件——jQuery-message
 date: 2014/9/07 17:26:25
+subtitle: 一个基于jQuery的消息提示插件，提示出现在右下角
+categories:
+- 插件
+tags:
+- JavaScript
+- jQuery
 ---
 
 <escape>
 <link rel="stylesheet" type="text/css" href="/css/widget/jquery-widget-min.css">
 <link rel="stylesheet" type="text/css" href="/css/message/jquery-message-min.css">
 <link rel="stylesheet" type="text/css" href="/css/message.css">
+
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.js"></script>
 
 <script type="text/javascript" src="/js/align/jquery-align-min.js"></script>
 <script type="text/javascript" src="/js/message/jquery-message-min.js"></script>

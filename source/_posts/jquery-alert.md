@@ -1,4 +1,10 @@
 title: jQuery提示框插件——jQuery-alert
+subtitle: 基于jQuery的提示框插件，提供常用的三种提示框
+categories:
+- 插件
+tags:
+- JavaScript
+- jQuery
 date: 2014/9/12 17:26:25
 ---
 
@@ -7,6 +13,7 @@ date: 2014/9/12 17:26:25
 <link rel="stylesheet" type="text/css" href="/css/alert/jquery-alert-min.css">
 <link rel="stylesheet" type="text/css" href="/css/message/jquery-message-min.css">
 <link rel="stylesheet" type="text/css" href="/css/alert.css">
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.js"></script>
 <script type="text/javascript" src="/js/align/jquery-align-min.js"></script>
 <script type="text/javascript" src="/js/widget/jquery-widget-min.js"></script>
 <script type="text/javascript" src="/js/message/jquery-message-min.js"></script>
@@ -26,75 +33,75 @@ date: 2014/9/12 17:26:25
 
 ```javascript
 $("#alert").click(function(){
-	$.alert({
-		content: '发生错误了～',
-		modal: true,
-		closeText: '关闭',
-		fixed: false,
-		width: 300,
-		close: function(){
-			$.msg.error({
-			    content: 'alert框关闭'
-			});
-		},
-		open: function() {
-			$.msg.log({
-			    content: 'alert框打开'
-			});
-		}
-	});
+    $.alert({
+        content: '发生错误了～',
+        modal: true,
+        closeText: '关闭',
+        fixed: false,
+        width: 300,
+        close: function(){
+            $.msg.error({
+                content: 'alert框关闭'
+            });
+        },
+        open: function() {
+            $.msg.log({
+                content: 'alert框打开'
+            });
+        }
+    });
 });
 $("#confirm").click(function(){
-	$.confirm({
-		content: '请问您确定要取消关注吗？',
-		modal: true,
-		closeText: '取消',
-		okText: '确定',
-		fixed: true,
-		width: 300,
-		close: function(){
-			$.msg.error({
-			    content: 'confirm框关闭'
-			});
-		},
-		ok: function(){
-			$.msg.success({
-			    content: 'confirm框确认'
-			});
-		},
-		open: function() {
-			$.msg.log({
-			    content: 'confirm框打开'
-			});
-		}
-	});
+    $.confirm({
+        content: '请问您确定要取消关注吗？',
+        modal: true,
+        closeText: '取消',
+        okText: '确定',
+        fixed: true,
+        width: 300,
+        close: function(){
+            $.msg.error({
+                content: 'confirm框关闭'
+            });
+        },
+        ok: function(){
+            $.msg.success({
+                content: 'confirm框确认'
+            });
+        },
+        open: function() {
+            $.msg.log({
+                content: 'confirm框打开'
+            });
+        }
+    });
 });
 $("#prompt").click(function(){
-	$.prompt({
-		content: '请问您想叫啥？',
-		modal: true,
-		closeText: '取消',
-		okText: '确定',
-		fixed: true,
-		defaultValue: 'default',
-		remind: 'remind',
-		width: 300,
-		close: function(){
-			$.msg.error({
-			    content: 'prompt框关闭'
-			});
-		},
-		ok: function(val){
-			$.msg.error({
-			    content: 'prompt框确认，输入值为：' + val
-			});
-		},
-		open: function() {
-			$.msg.log({
-			    content: 'prompt框打开'
-			});
-		}
-	});
+    $.prompt({
+        content: '请问您想叫啥？',
+        modal: true,
+        closeText: '取消',
+        okText: '确定',
+        fixed: true,
+        defaultValue: 'default',
+        remind: 'remind',
+        width: 300,
+        close: function(){
+            $.msg.error({
+                content: 'prompt框关闭'
+            });
+        },
+        ok: function(val){
+            $.msg.error({
+                content: 'prompt框确认，输入值为：' + val
+            });
+        },
+        open: function() {
+            $.msg.log({
+                content: 'prompt框打开'
+            });
+        }
+    });
 });
 ```
 
@@ -103,77 +110,77 @@ $("#prompt").click(function(){
 <button id="confirm" class="btn btn-open">confirm</button>
 <button id="prompt" class="btn btn-open">prompt</button>
 <script type="text/javascript">
-	$("#alert").click(function(){
-		$.alert({
-			content: '发生错误了～',
-			modal: true,
-			closeText: '关闭',
-			fixed: false,
-			width: 300,
-			close: function(){
-				$.msg.error({
-				    content: 'alert框关闭'
-				});
-			},
-			open: function() {
-				$.msg.log({
-				    content: 'alert框打开'
-				});
-			}
-		});
-	});
-	$("#confirm").click(function(){
-		$.confirm({
-			content: '请问您确定要取消关注吗？',
-			modal: true,
-			closeText: '取消',
-			okText: '确定',
-			fixed: true,
-			width: 300,
-			close: function(){
-				$.msg.error({
-				    content: 'confirm框关闭'
-				});
-			},
-			ok: function(){
-				$.msg.success({
-				    content: 'confirm框确认'
-				});
-			},
-			open: function() {
-				$.msg.log({
-				    content: 'confirm框打开'
-				});
-			}
-		});
-	});
-	$("#prompt").click(function(){
-		$.prompt({
-			content: '请问您想叫啥？',
-			modal: true,
-			closeText: '取消',
-			okText: '确定',
-			fixed: true,
-			defaultValue: 'default',
-			remind: 'remind',
-			width: 300,
-			close: function(){
-				$.msg.error({
-				    content: 'prompt框关闭'
-				});
-			},
-			ok: function(val){
-				$.msg.error({
-				    content: 'prompt框确认，输入值为：' + val
-				});
-			},
-			open: function() {
-				$.msg.log({
-				    content: 'prompt框打开'
-				});
-			}
-		});
-	});
+    $("#alert").click(function(){
+        $.alert({
+            content: '发生错误了～',
+            modal: true,
+            closeText: '关闭',
+            fixed: false,
+            width: 300,
+            close: function(){
+                $.msg.error({
+                    content: 'alert框关闭'
+                });
+            },
+            open: function() {
+                $.msg.log({
+                    content: 'alert框打开'
+                });
+            }
+        });
+    });
+    $("#confirm").click(function(){
+        $.confirm({
+            content: '请问您确定要取消关注吗？',
+            modal: true,
+            closeText: '取消',
+            okText: '确定',
+            fixed: true,
+            width: 300,
+            close: function(){
+                $.msg.error({
+                    content: 'confirm框关闭'
+                });
+            },
+            ok: function(){
+                $.msg.success({
+                    content: 'confirm框确认'
+                });
+            },
+            open: function() {
+                $.msg.log({
+                    content: 'confirm框打开'
+                });
+            }
+        });
+    });
+    $("#prompt").click(function(){
+        $.prompt({
+            content: '请问您想叫啥？',
+            modal: true,
+            closeText: '取消',
+            okText: '确定',
+            fixed: true,
+            defaultValue: 'default',
+            remind: 'remind',
+            width: 300,
+            close: function(){
+                $.msg.error({
+                    content: 'prompt框关闭'
+                });
+            },
+            ok: function(val){
+                $.msg.error({
+                    content: 'prompt框确认，输入值为：' + val
+                });
+            },
+            open: function() {
+                $.msg.log({
+                    content: 'prompt框打开'
+                });
+            }
+        });
+    });
 </script>
 </escape>
 
@@ -205,54 +212,54 @@ prompt在confirm基础上增加：
 是否为模态提示框，Boolean，默认为`false`
 
 <escape>
-	<button class="btn btn-open" id="isModal">模态提示框</button>
-	<button class="btn btn-open" id="isNotModal">非模态提示框</button>
-	<script type="text/javascript">
-		$("#isModal").click(function(){
-			$.alert({
-				content: '这是个模态alert',
-				modal: true,
-				closeText: '关闭',
-				width: 300
-			});
-		});
-		$("#isNotModal").click(function(){
-			$.alert({
-				content: '这是个非模态alert',
-				modal: false,
-				closeText: '关闭',
-				width: 300
-			});
-		});
-	</script>
+    <button class="btn btn-open" id="isModal">模态提示框</button>
+    <button class="btn btn-open" id="isNotModal">非模态提示框</button>
+    <script type="text/javascript">
+        $("#isModal").click(function(){
+            $.alert({
+                content: '这是个模态alert',
+                modal: true,
+                closeText: '关闭',
+                width: 300
+            });
+        });
+        $("#isNotModal").click(function(){
+            $.alert({
+                content: '这是个非模态alert',
+                modal: false,
+                closeText: '关闭',
+                width: 300
+            });
+        });
+    </script>
 </escape>
 
 ##fixed
 是否固定在屏幕中间，Boolean，默认为`false`
 
 <escape>
-	<button class="btn btn-open" id="isFiexed">fixed提示框</button>
-	<button class="btn btn-open" id="isNotFixed">非fixed提示框</button>
-	<script type="text/javascript">
-		$("#isFiexed").click(function(){
-			$.alert({
-				content: '这是个fixed alert',
-				fixed: true,
-				closeText: '关闭',
-				width: 300,
-				modal: true
-			});
-		});
-		$("#isNotFixed").click(function(){
-			$.alert({
-				content: '这是个非fixed alert',
-				fixed: false,
-				closeText: '关闭',
-				width: 300,
-				modal: true
-			});
-		});
-	</script>
+    <button class="btn btn-open" id="isFiexed">fixed提示框</button>
+    <button class="btn btn-open" id="isNotFixed">非fixed提示框</button>
+    <script type="text/javascript">
+        $("#isFiexed").click(function(){
+            $.alert({
+                content: '这是个fixed alert',
+                fixed: true,
+                closeText: '关闭',
+                width: 300,
+                modal: true
+            });
+        });
+        $("#isNotFixed").click(function(){
+            $.alert({
+                content: '这是个非fixed alert',
+                fixed: false,
+                closeText: '关闭',
+                width: 300,
+                modal: true
+            });
+        });
+    </script>
 </escape>
 
 ##closeText
@@ -294,12 +301,12 @@ prompt输入框的提示信息，String
 自定义样式对象，默认如下：
 ```javascript
 css: {
-	panel: 'wd-ui-pn',
-	content: 'wd-ui-ctn',
-	footer: 'wd-ui-ft',
-	close: 'wd-ui-close',
-	ok: 'wd-ui-ok',
-	input: 'wd-ui-ipt'
+    panel: 'wd-ui-pn',
+    content: 'wd-ui-ctn',
+    footer: 'wd-ui-ft',
+    close: 'wd-ui-close',
+    ok: 'wd-ui-ok',
+    input: 'wd-ui-ipt'
 }
 ```
 
