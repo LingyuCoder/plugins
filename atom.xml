@@ -4,7 +4,7 @@
   <subtitle><![CDATA[没事敲插件]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://plugins.lingyu.wang/"/>
-  <updated>2014-09-17T08:43:32.418Z</updated>
+  <updated>2014-09-17T09:17:50.881Z</updated>
   <id>http://plugins.lingyu.wang/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://plugins.lingyu.wang/2014/09/12/jquery-alert/"/>
     <id>http://plugins.lingyu.wang/2014/09/12/jquery-alert/</id>
     <published>2014-09-12T09:26:25.000Z</published>
-    <updated>2014-09-14T12:00:39.000Z</updated>
+    <updated>2014-09-17T09:14:51.000Z</updated>
     <content type="html"><![CDATA[
 <link rel="stylesheet" type="text/css" href="/css/widget/jquery-widget-min.css">
 <link rel="stylesheet" type="text/css" href="/css/alert/jquery-alert-min.css">
@@ -1158,8 +1158,10 @@ $(function(){
     <link href="http://plugins.lingyu.wang/2014/07/29/generator/"/>
     <id>http://plugins.lingyu.wang/2014/07/29/generator/</id>
     <published>2014-07-28T16:00:00.000Z</published>
-    <updated>2014-09-16T15:26:29.000Z</updated>
+    <updated>2014-09-17T09:16:31.000Z</updated>
     <content type="html"><![CDATA[<p>文章中有很多关于运行时上下文（Execution Context，以下简称EC）的操作，关于EC，作用域链的基础知识请移步<a href="http://lingyu.wang/#/art/blog/2014/03/28/js-basis" target="_blank" rel="external">JavaScript一些基础知识简介</a></p>
+<a id="more"></a>
+
 <h1 id="Generator函数">Generator函数</h1>
 <p>generator函数执行的时候，会进行如下动作：</p>
 <ol>
@@ -1294,7 +1296,8 @@ $(function(){
 <p><a href="http://wiki.ecmascript.org/doku.php?id=harmony:generators" target="_blank" rel="external">harmony generators ES Wiki</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[好久没写东西了，今天看了下ES6的Generator的相关知识，在这里记录一下。主要内容翻译自规范，并加入了自己的理解和总结]]>
+    <![CDATA[<p>文章中有很多关于运行时上下文（Execution Context，以下简称EC）的操作，关于EC，作用域链的基础知识请移步<a href="http://lingyu.wang/#/art/blog/2014/03/28/js-basis" target="_blank" rel="external">JavaScript一些基础知识简介</a></p>
+]]>
     
     </summary>
     
