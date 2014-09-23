@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <template id="tpl">
+        <div>not show</div>
+    </template>
+    <div id="example1">Light DOM</div>
+<script>
+var container = document.querySelector('#example1');
+var root1 = container.createShadowRoot();
+var root2 = container.createShadowRoot();
+root1.appendChild(document.importNode(document.querySelector('template').content, true));
+root2.appendChild(document.importNode(document.querySelector('template').content, true));
+</script>
+</body>
+</html>
